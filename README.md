@@ -42,7 +42,7 @@ Zeeshan is responsible for creating
 - add to cart functionality;
 
 
-#Frontend
+# Frontend
 
 ## Landing page
 
