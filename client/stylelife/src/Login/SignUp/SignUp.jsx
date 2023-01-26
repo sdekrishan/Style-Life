@@ -19,7 +19,7 @@ const SignUp = ({
   const PostForSignUp = async (data) => {
     try {
       let res = await axios.post(
-        "https://nice-ruby-tortoise.cyclic.app/user/register",
+        "https://shy-blue-centipede-tie.cyclic.app/user/register",
         data
       );
 

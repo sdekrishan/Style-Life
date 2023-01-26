@@ -22,7 +22,7 @@ const Homepageroutes = () => {
         <Route path="/health" element={<Products category="health" />}></Route>
         <Route path="/saloon" element={<Saloon />}></Route>
         <Route path="/buffet" element={<Buffetpage />}></Route>
-        <Route path="/ProductDetails" element={<SingleProduct />} />
+        <Route path="/ProductDetails/:id" element={<SingleProduct />} />
         <Route path="/payment" element={<PaymentPage />} />
         <Route path="/admin" element={<PrivateRoute><AdminHome /></PrivateRoute>} />
         <Route path="*" element={<ErrorPage />} />

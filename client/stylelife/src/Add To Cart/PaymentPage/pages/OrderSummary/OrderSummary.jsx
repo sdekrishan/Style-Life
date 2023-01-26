@@ -11,28 +11,41 @@ import {
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { json, useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import {  useNavigate } from "react-router-dom";
+import { getCart } from "../../../../Redux/Cart/Cart.types";
 import style from "./styles/OrderSummary.module.css";
 
 const OrderSummary = ({ CartDataid }) => {
 
 
-  let cartData = JSON.parse(localStorage.getItem("cartData")) || "null";
-  const toast = useToast();
-  const navigation = useNavigate();
+  // let cartData = JSON.parse(localStorage.getItem("cartData")) || "null";
   const [List, setList] = useState(true);
+  const [cartData,setCartData] = useState([])
+  const dispatch = useDispatch();
 
-  if (cartData == "null") {
-    navigation("/");
-    toast({
-      position: "top",
-      title: "Your Cart is Empty Please Add Product.",
-      status: "error",
-      duration: 5000,
-      isClosable: true,
-    });
-    return;
-  }
+  useEffect(()=>{
+    dispatch(getCart())
+    .then(r=>{
+      console.log("r", r) 
+      setCartData(r.payload[0].deals) 
+    })
+    .catch(e=>console.log(e))
+  },[])
+
+  // if (cartData == "null") {
+  //   navigation("/");
+  //   toast({
+  //     position: "top",
+  //     title: "Your Cart is Empty Please Add Product.",
+  //     status: "error",
+  //     duration: 5000,
+  //     isClosable: true,
+  //   });
+  //   return;
+  // }
+
+
 
   return (
     <>
@@ -61,24 +74,24 @@ const OrderSummary = ({ CartDataid }) => {
         <Box>
           {" "}
           <Flex>
-            <Box>
+            {/* <Box>
               <Image w="50px" src={cartData[0].image} />
-            </Box>
+            </Box> */}
             <Box>
-              <Text>{cartData[0].name}</Text>
+              <Text>{cartData.name}</Text>
               <Text>{cartData.address}</Text>
             </Box>
           </Flex>
         </Box>
         <Divider mb="8px" />
 
-        {cartData.map((ele) => {
+        {cartData && cartData.map((ele) => {
           return (
-            <Box pt="5px" className={style.summaryBox} borderTop="1px solid">
+            <Box pt="5px" className={style.summaryBox} borderTop="1px solid" key={ele._id }>
               <Box>
                 {" "}
                 <Text display={"flex"} justifyContent={"flex-start"}>
-                  {ele.productname}
+                  {ele.name}
                 </Text>
               </Box>
               <Flex>
@@ -105,7 +118,9 @@ const OrderSummary = ({ CartDataid }) => {
             <Text>Subtotal (Qty. {cartData.length})</Text>
           </Box>
           <Spacer />
-          <Box>$ {cartData[cartData.length-1].total}</Box>
+          <Box>$ {cartData.reduce((a,e,i)=>{
+              return Number(e.price.split(",").join(""))+a
+            },0)}</Box>
         </Flex>
 
         <Divider mb="8px" />
@@ -130,7 +145,9 @@ const OrderSummary = ({ CartDataid }) => {
           <Box>Total</Box>
           <Spacer />
           <Box>
-            <Text>$ {Number(cartData[cartData.length-1].total) + 20}</Text>
+            <Text>$ {cartData.reduce((a,e,i)=>{
+              return Number(e.price.split(",").join(""))+a
+            },0) + 20}</Text>
             <Text color="blue.500">You save 20%</Text>
             <Text color="blue.500">Inclusive of all taxes</Text>
           </Box>

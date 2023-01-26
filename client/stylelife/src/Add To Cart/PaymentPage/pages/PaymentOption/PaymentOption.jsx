@@ -24,10 +24,10 @@ const [PaymentOfMethod , setPaymentOfMethod] = useState("Paytm")
         <Box bg="white" w="8rem" h="14rem" ><PaymentText setPaymentOfMethod={setPaymentOfMethod} PaymentOfMethod={PaymentOfMethod} /></Box>
         <Box p="25px"  bg="white" w="40rem" h="30rem" >
 
-        {PaymentOfMethod == "Paytm" ? <Paytm setOrderPlace={setOrderPlace}/> : ""}
-        {PaymentOfMethod == "Credit Cards" ? <CreditCards setOrderPlace={setOrderPlace}/> : ""}
-        {PaymentOfMethod == "Debit Cards" ? <DeditCards setOrderPlace={setOrderPlace}/> : ""}
-        {PaymentOfMethod == "Net Banking" ? <NetBanking setOrderPlace={setOrderPlace}/> : ""}
+        {PaymentOfMethod === "Paytm" ? <Paytm setOrderPlace={setOrderPlace}/> : ""}
+        {PaymentOfMethod === "Credit Cards" ? <CreditCards setOrderPlace={setOrderPlace}/> : ""}
+        {PaymentOfMethod === "Debit Cards" ? <DeditCards setOrderPlace={setOrderPlace}/> : ""}
+        {PaymentOfMethod === "Net Banking" ? <NetBanking setOrderPlace={setOrderPlace}/> : ""}
 
         
         </Box>

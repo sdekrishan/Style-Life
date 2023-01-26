@@ -1,4 +1,5 @@
 import { Box, Image } from "@chakra-ui/react";
+import axios from "axios";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -9,6 +10,23 @@ export const PaymentSucces = () => {
     "https://www.cashlesso.com/wp-content/uploads/2020/03/19-March-Final-animation.gif"
   );
   const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("StyleLifeUserData")) || {};
+  const deleteCart = async () => {
+    try {
+      let res = await axios.delete(
+        "https://shy-blue-centipede-tie.cyclic.app/cart/delete",
+        {
+          headers: {
+            "Content-type": "application/json",
+            Authorization: user.token,
+          },
+        }   
+      );
+      console.log(res);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
     let id;
@@ -18,8 +36,8 @@ export const PaymentSucces = () => {
           setIMage(
             "https://service-isib.ru/design/builds/static/img/check-circle.gif"
           );
+          deleteCart();
 
-          localStorage.removeItem("cartData");
           if (ele < -1) {
             navigate("/");
             clearInterval(id);

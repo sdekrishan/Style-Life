@@ -7,6 +7,7 @@ import {
   Button,
   Image,
   useDisclosure,
+  Box,
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useState } from "react";
@@ -16,20 +17,33 @@ import Login from "./Login";
 const ModalLogin = ({ title }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [UserLogin, setUserLogin] = useState(false);
+  const [AdminLogin, setAdminLogin ] = useState(false);
   const [Admin, setAdmin] = useState("")
   const navigate = useNavigate()
+  let token = JSON.parse(localStorage.getItem("StyleLifeUserData")) || "";
+  let admintoken = JSON.parse(localStorage.getItem("StyleLifeAdminData")) || "";
+  token = token.token;
+  admintoken = admintoken.token
   useEffect(() => {
-    let token = JSON.parse(localStorage.getItem("StyleLifeUserData")) || "";
-    token = token.token;
-    if (token == undefined) {
+    if (token === undefined) {
       setUserLogin(true);
-    } else {
+    }
+     else {
       setUserLogin(false);
     }
   });
+  useEffect(()=>{
+    if(admintoken===undefined){
+      setAdminLogin(true)
+    }
+    else {
+      setAdminLogin(false)
+    }
+  })
 
   const HandelLogOut = () => {
     setUserLogin(true);
+    setAdmin("")
     localStorage.removeItem("StyleLifeUserData");
     localStorage.removeItem("StyleLifeAdminData");
 
@@ -38,14 +52,14 @@ const ModalLogin = ({ title }) => {
 
   return (
    <>
-    <Button>
-      {UserLogin ? (
+    <Box>
+      {UserLogin && Admin !== "Admin" ?  (
         <>
           <Button bg="none" w="auto" onClick={()=>{
             onOpen();
            
           }}>
-            {title == "yes" ? (
+            {title === "yes" ? (
               <Image
                 src="https://cdn.icon-icons.com/icons2/2406/PNG/512/user_account_icon_145918.png"
                 alt="acntlogo"
@@ -74,13 +88,16 @@ const ModalLogin = ({ title }) => {
           </Modal>
         </>
       ) : (
-       <Button>
-        <Button onClick={HandelLogOut}>Logout</Button>
+    
+        <Button onClick={HandelLogOut} display={{base:"none",md:"block"}}>Logout</Button>
        
-        </Button>
+       
       )}
-    </Button>
-   <Button display={Admin=="" ? 'none' : 'block'} onClick={()=>navigate("/admin")}>{Admin == "" ? "" :  Admin}</Button>
+    </Box>
+   <Button
+   display={Admin ===""  ? 'none' : 'block'}
+  
+   onClick={()=>navigate("/admin")}>{Admin === "" ? "" :  Admin}</Button>
    </>
   );
 };

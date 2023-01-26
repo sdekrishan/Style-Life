@@ -19,7 +19,7 @@ import { useEffect } from "react";
 import { filterdata, getdata } from "../Redux/products/Prodaction";
 import { StarIcon } from "@chakra-ui/icons";
 import Pagination from "./Pagination";
-import { useNavigate } from "react-router-dom";
+import { Navigate, useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import Footer from "../Footer/Footer";
 
 const smVariant = { navigation: "drawer", navigationButton: true };
@@ -71,9 +71,9 @@ const Products = ({ category }) => {
     }
   };
 
+
   const tolocal = (el) => {
-    localStorage.setItem("product", JSON.stringify(el));
-    navigate("/ProductDetails");
+    navigate(`/ProductDetails/${el._id}?${el.type}`);
   };
 
   return (
@@ -117,7 +117,7 @@ const Products = ({ category }) => {
             </Box>
           )}
 
-          {products.data.length === 0 && products.loading == false && (
+          {products.data.length === 0 && products.loading === false && (
             <Box>
               <Heading>
                 Results not found for this Location. Please Select Another

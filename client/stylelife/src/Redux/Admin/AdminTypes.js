@@ -39,10 +39,17 @@ import {
   ADMIN_USER_SUCCESS,
 } from "./AdminAction";
 
+const admin = JSON.parse(localStorage.getItem("StyleLifeAdminData")) || "";
+
 export const getAllRestro = () => (dispatch) => {
   dispatch({ type: ADMIN_RESTRO_REQUEST });
   return axios
-    .get("https://nice-ruby-tortoise.cyclic.app/admin/restro")
+    .get("https://shy-blue-centipede-tie.cyclic.app/admin/restro", {
+      headers: {
+        "Content-type": "application/json",
+        admin: admin.token,
+      },
+    })
     .then((response) =>
       dispatch({ type: ADMIN_RESTRO_SUCCESS, payload: response.data })
     )
@@ -52,7 +59,12 @@ export const getAllRestro = () => (dispatch) => {
 export const getAllSpa = () => (dispatch) => {
   dispatch({ type: ADMIN_SPA_REQUEST });
   return axios
-    .get("  admin/spa")
+    .get("https://shy-blue-centipede-tie.cyclic.app/admin/spa", {
+      headers: {
+        "Content-type": "application/json",
+        admin: admin.token,
+      },
+    })
     .then((response) =>
       dispatch({ type: ADMIN_SPA_SUCCESS, payload: response.data })
     )
@@ -61,7 +73,12 @@ export const getAllSpa = () => (dispatch) => {
 export const getAllHealth = () => (dispatch) => {
   dispatch({ type: ADMIN_HEALTH_REQUEST });
   return axios
-    .get("https://nice-ruby-tortoise.cyclic.app/admin/health")
+    .get("https://shy-blue-centipede-tie.cyclic.app/admin/health", {
+      headers: {
+        "Content-type": "application/json",
+        admin: admin.token,
+      },
+    })
     .then((response) =>
       dispatch({ type: ADMIN_HEALTH_SUCCESS, payload: response.data })
     )
@@ -70,7 +87,12 @@ export const getAllHealth = () => (dispatch) => {
 export const getAllUser = () => (dispatch) => {
   dispatch({ type: ADMIN_USER_REQUEST });
   return axios
-    .get("https://nice-ruby-tortoise.cyclic.app/admin/users")
+    .get("https://shy-blue-centipede-tie.cyclic.app/admin/users", {
+      headers: {
+        "Content-type": "application/json",
+        admin: admin.token,
+      },
+    })
     .then((response) =>
       dispatch({ type: ADMIN_USER_SUCCESS, payload: response.data })
     )
@@ -80,7 +102,12 @@ export const getAllUser = () => (dispatch) => {
 export const AddRestro = (data) => (dispatch) => {
   dispatch({ type: ADMIN_RESTRO_ADD_REQUEST });
   return axios
-    .post(`https://nice-ruby-tortoise.cyclic.app/admin/restro/post`, data)
+    .post(`https://shy-blue-centipede-tie.cyclic.app/admin/restro/post`, data, {
+      headers: {
+        "Content-type": "application/json",
+        admin: admin.token,
+      },
+    })
     .then((res) =>
       dispatch({ type: ADMIN_RESTRO_ADD_SUCCESS, payload: res.data.alldata })
     )
@@ -89,7 +116,15 @@ export const AddRestro = (data) => (dispatch) => {
 export const DelRestro = (id) => (dispatch) => {
   dispatch({ type: ADMIN_RESTRO_DEL_REQUEST });
   return axios
-    .delete(`https://nice-ruby-tortoise.cyclic.app/admin/restro/delete/${id}`)
+    .delete(
+      `https://shy-blue-centipede-tie.cyclic.app/admin/restro/delete/${id}`,
+      {
+        headers: {
+          "Content-type": "application/json",
+          admin: admin.token,
+        },
+      }
+    )
     .then((res) =>
       dispatch({ type: ADMIN_RESTRO_DEL_SUCCESS, payload: res.data })
     )
@@ -100,8 +135,14 @@ export const UpdateRestro = (data, id) => (dispatch) => {
   dispatch({ type: ADMIN_RESTRO_DEL_REQUEST });
   return axios
     .patch(
-      `https://nice-ruby-tortoise.cyclic.app/admin/restro/update/${id}`,
-      data
+      `https://shy-blue-centipede-tie.cyclic.app/admin/restro/update/${id}`,
+      data,
+      {
+        headers: {
+          "Content-type": "application/json",
+          admin: admin.token,
+        },
+      }
     )
     .then((res) =>
       dispatch({ type: ADMIN_RESTRO_DEL_SUCCESS, payload: res.data.alldata })
@@ -112,7 +153,12 @@ export const UpdateRestro = (data, id) => (dispatch) => {
 export const AddSpa = (data) => (dispatch) => {
   dispatch({ type: ADMIN_SPA_ADD_REQUEST });
   return axios
-    .post(`https://nice-ruby-tortoise.cyclic.app/admin/spa/post`, data)
+    .post(`https://shy-blue-centipede-tie.cyclic.app/admin/spa/post`, data, {
+      headers: {
+        "Content-type": "application/json",
+        admin: admin.token,
+      },
+    })
     .then((res) =>
       dispatch({ type: ADMIN_SPA_ADD_SUCCESS, payload: res.data.alldata })
     )
@@ -121,7 +167,15 @@ export const AddSpa = (data) => (dispatch) => {
 export const DelSpa = (id) => (dispatch) => {
   dispatch({ type: ADMIN_SPA_DEL_REQUEST });
   return axios
-    .delete(`https://nice-ruby-tortoise.cyclic.app/admin/spa/delete/${id}`)
+    .delete(
+      `https://shy-blue-centipede-tie.cyclic.app/admin/spa/delete/${id}`,
+      {
+        headers: {
+          "Content-type": "application/json",
+          admin: admin.token,
+        },
+      }
+    )
     .then((res) => dispatch({ type: ADMIN_SPA_DEL_SUCCESS, payload: res.data }))
     .catch((err) => dispatch({ type: ADMIN_SPA_DEL_ERROR }));
 };
@@ -129,7 +183,16 @@ export const DelSpa = (id) => (dispatch) => {
 export const UpdateSpa = (data, id) => (dispatch) => {
   dispatch({ type: ADMIN_SPA_DEL_REQUEST });
   return axios
-    .patch(`https://nice-ruby-tortoise.cyclic.app/admin/spa/update/${id}`, data)
+    .patch(
+      `https://shy-blue-centipede-tie.cyclic.app/admin/spa/update/${id}`,
+      data,
+      {
+        headers: {
+          "Content-type": "application/json",
+          admin: admin.token,
+        },
+      }
+    )
     .then((res) =>
       dispatch({ type: ADMIN_SPA_UPDATE_SUCCESS, payload: res.data.alldata })
     )
@@ -139,7 +202,12 @@ export const UpdateSpa = (data, id) => (dispatch) => {
 export const AddHealth = (data) => (dispatch) => {
   dispatch({ type: ADMIN_HEALTH_ADD_REQUEST });
   return axios
-    .post(`https://nice-ruby-tortoise.cyclic.app/admin/health/post`, data)
+    .post(`https://shy-blue-centipede-tie.cyclic.app/admin/health/post`, data, {
+      headers: {
+        "Content-type": "application/json",
+        admin: admin.token,
+      },
+    })
     .then((res) =>
       dispatch({ type: ADMIN_HEALTH_ADD_SUCCESS, payload: res.data.alldata })
     )
@@ -148,7 +216,15 @@ export const AddHealth = (data) => (dispatch) => {
 export const DelHealth = (id) => (dispatch) => {
   dispatch({ type: ADMIN_HEALTH_DEL_REQUEST });
   return axios
-    .delete(`https://nice-ruby-tortoise.cyclic.app/admin/health/delete/${id}`)
+    .delete(
+      `https://shy-blue-centipede-tie.cyclic.app/admin/health/delete/${id}`,
+      {
+        headers: {
+          "Content-type": "application/json",
+          admin: admin.token,
+        },
+      }
+    )
     .then((res) =>
       dispatch({ type: ADMIN_HEALTH_DEL_SUCCESS, payload: res.data.alldata })
     )
@@ -159,8 +235,14 @@ export const UpdateHealth = (data, id) => (dispatch) => {
   dispatch({ type: ADMIN_HEALTH_DEL_REQUEST });
   return axios
     .patch(
-      `https://nice-ruby-tortoise.cyclic.app/admin/health/update/${id}`,
-      data
+      `https://shy-blue-centipede-tie.cyclic.app/admin/health/update/${id}`,
+      data,
+      {
+        headers: {
+          "Content-type": "application/json",
+          admin: admin.token,
+        },
+      }
     )
     .then((res) =>
       dispatch({ type: ADMIN_HEALTH_UPDATE_SUCCESS, payload: res.data.alldata })
@@ -171,7 +253,12 @@ export const UpdateHealth = (data, id) => (dispatch) => {
 export const ChangeType = (id) => (dispatch) => {
   dispatch({ type: ADMIN_USER_CHANGE_REQUEST });
   return axios
-    .patch(`https://nice-ruby-tortoise.cyclic.app/admin/users/type/${id}`)
+    .patch(`https://shy-blue-centipede-tie.cyclic.app/admin/users/type/${id}`, {
+      headers: {
+        "Content-type": "application/json",
+        admin: admin.token,
+      },
+    })
     .then((res) =>
       dispatch({ type: ADMIN_USER_CHANGE_SUCCESS, payload: res.data.data })
     )

@@ -11,31 +11,32 @@ const PaymentPage = () => {
   const [orderPlace, setOrderPlace] = useState(false);
   const navigation = useNavigate();
 
+  let token = JSON.parse(localStorage.getItem("StyleLifeUserData")) || "";
   const GetCartData = async () => {
-    let token = JSON.parse(localStorage.getItem("StyleLifeUserData")) || "";
-
-    console.log(token.token);
 
     try {
-      let res = await axios.get("https://nice-ruby-tortoise.cyclic.app/cart/", {
-        headers: {
-          authorization: token.token,
-        },
-      });
-      setCartData(res.data);
+      let res = await axios.get(
+        "https://shy-blue-centipede-tie.cyclic.app/cart/",
+        {
+          headers: {
+            "Content-type":"application/json",
+
+            authorization: token.token,
+          },
+        }
+      );
+      console.log(res)
+      return res.data[0].deals
     } catch (err) {
       console.log(err, "errr");
     }
   };
 
   useEffect(() => {
-    GetCartData();
-    let token = JSON.parse(localStorage.getItem("StyleLifeUserData")) || "";
-    if (token == "") {
+    GetCartData().then(r=>console.log(r)).catch(e=>console.log(e));
+    if (token.token === "") {
       navigation("/");
     }
-
-    console.log(token, "token");
   }, []);
 
   return (

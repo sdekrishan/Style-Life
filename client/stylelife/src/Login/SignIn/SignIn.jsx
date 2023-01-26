@@ -7,10 +7,16 @@ import { useToast } from "@chakra-ui/react";
 import ForgatePassword from "../ForgatePassword/ForgatePassword";
 import axios from "axios";
 
-const SignIn = ({ name, HandelChange, onClose, setPasswordForgate, setAdmin }) => {
+const SignIn = ({
+  name,
+  HandelChange,
+  onClose,
+  setPasswordForgate,
+  setAdmin,
+}) => {
   const [timer, setTimer] = useState(30);
   const toast = useToast();
-  const [AdminBtn , setAdmBtn] = useState(false)
+  const [AdminBtn, setAdmBtn] = useState(false);
 
   const [nextBtn, setNextBtn] = useState(true);
 
@@ -22,10 +28,10 @@ const SignIn = ({ name, HandelChange, onClose, setPasswordForgate, setAdmin }) =
   const PostForSignUp = async (data1) => {
     try {
       let res = await axios.post(
-        "https://nice-ruby-tortoise.cyclic.app/user/login",
+        "https://shy-blue-centipede-tie.cyclic.app/user/login",
         data1
-      )
-        console.log(res);
+      );
+      console.log(res);
       if (res.data.msg === "login successful") {
         toast({
           position: "top",
@@ -35,8 +41,7 @@ const SignIn = ({ name, HandelChange, onClose, setPasswordForgate, setAdmin }) =
           duration: 5000,
           isClosable: true,
         });
-      console.log("user", res)
-      
+        console.log("user", res);
 
         let obj = {
           name,
@@ -48,8 +53,7 @@ const SignIn = ({ name, HandelChange, onClose, setPasswordForgate, setAdmin }) =
 
         navigation("/");
         onClose();
-      }
-    else if(res.data.msg === "Admin login successful"){
+      } else if (res.data.msg === "Admin login successful") {
         toast({
           position: "top",
           title: "Admin Login",
@@ -57,25 +61,24 @@ const SignIn = ({ name, HandelChange, onClose, setPasswordForgate, setAdmin }) =
           status: "success",
           duration: 5000,
           isClosable: true,
-        })
-      setAdmin("Admin")
+        });
+        setAdmin("Admin");
 
         let obj = {
           name,
           user: email,
           token: res.data.token,
         };
-        console.log(obj,"obj");
+        console.log(obj, "obj");
         localStorage.setItem("StyleLifeAdminData", JSON.stringify(obj));
         setAdmBtn(true);
         navigation("/");
         onClose();
-      }
-      else {
+      } else {
         toast({
           position: "top",
           title: "Wrong Credentials",
-          description: "Please Try Agin",
+          description: "Please Try Again",
           status: "error",
           duration: 5000,
           isClosable: true,
@@ -86,7 +89,7 @@ const SignIn = ({ name, HandelChange, onClose, setPasswordForgate, setAdmin }) =
       toast({
         position: "top",
         title: "Something Went Wrong",
-        description: "Please Try Agin",
+        description: "Please Try Again",
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -124,7 +127,6 @@ const SignIn = ({ name, HandelChange, onClose, setPasswordForgate, setAdmin }) =
     };
     PostForSignUp(obj);
   };
-
 
   return (
     <Box className={style.mainBox} mt={"60px"}>

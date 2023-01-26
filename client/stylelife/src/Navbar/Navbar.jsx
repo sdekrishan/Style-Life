@@ -10,7 +10,7 @@ import {useNavigate} from "react-router-dom"
 import styles from "../Homepage/css/Nav.css"
 
 const links=[
-  {path:"/Restaurants",title:`Restaurants`,logo:"https://img4.nbstatic.in/tr:w-/60af2a061e2731000ba1096a.png"},{path:"/buffet",title:"Buffet",logo:"https://img4.nbstatic.in/tr:w-/639acd9b8db992000bac8a46.png"},{path:"/saloon",title:"Saloon",logo:"https://img4.nbstatic.in/tr:w-/60ac96c840e9df000b6cbf94.png"},{path:"/spa",title:"Spa",logo:"https://img4.nbstatic.in/tr:w-/60ac96e240e9df000b6cbf95.png"},{path:"/activities",title:"Activities",logo:"https://img4.nbstatic.in/tr:w-/6201ec623b031b000b53e5b6.png"},{path:"/gift",title:"Gift",logo:"https://img4.nbstatic.in/tr:w-/62d67522edffcc000b060b5c.png"}
+  {path:"/restaurant",title:`Restaurants`,logo:"https://img4.nbstatic.in/tr:w-/60af2a061e2731000ba1096a.png"},{path:"/buffet",title:"Buffet",logo:"https://img4.nbstatic.in/tr:w-/639acd9b8db992000bac8a46.png"},{path:"/saloon",title:"Saloon",logo:"https://img4.nbstatic.in/tr:w-/60ac96c840e9df000b6cbf94.png"},{path:"/spa",title:"Spa",logo:"https://img4.nbstatic.in/tr:w-/60ac96e240e9df000b6cbf95.png"},{path:"/activities",title:"Activities",logo:"https://img4.nbstatic.in/tr:w-/6201ec623b031b000b53e5b6.png"},{path:"/gift",title:"Gift",logo:"https://img4.nbstatic.in/tr:w-/62d67522edffcc000b060b5c.png"}
 ]
 
 const Navbar = () => {
@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
 
     <>
-    <div className="mobilenav">
+    <div className="mobilenav" style={{position:"fixed",zIndex:"3"}}>
     
      <Box className='logobox' >
   <Image src={log} alt='Dan Abramov' style={{height:"40px"}} onClick={()=>navigate("/")} />
@@ -84,17 +84,11 @@ const Navbar = () => {
   </Box>
 
  
- <Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+ <Menu >
+  <MenuButton w={{base:"4rem"}} ml='-19px' p='.5rem' fontSize='.8rem' as={Button}>
     Mumbai
   </MenuButton>
-  <MenuList>
-    <MenuItem>Lucknow</MenuItem>
-    <MenuItem>Banglore </MenuItem>
-    <MenuItem>Delhi</MenuItem>
-    <MenuItem>Noida</MenuItem>
-    <MenuItem>Kolkata</MenuItem>
-  </MenuList>
+
 </Menu>
  
 

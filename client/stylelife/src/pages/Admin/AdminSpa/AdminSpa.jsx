@@ -17,7 +17,7 @@ const AdminSpa = ({Data}) => {
       name:updateName,
       address:updateAddress,
       offers:updateOffers,
-      img_url:updateImage
+      img_src:updateImage
     }
     dispatch(UpdateSpa  (payload,id));
   }    

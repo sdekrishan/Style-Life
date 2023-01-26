@@ -79,7 +79,7 @@ export default function Footer() {
             <Link>Terms of Use</Link>
             <Link>Privacy Policy</Link>
             <Link>California Do Not Sell My Personal Information</Link>
-            <Link>Diversity, Equity and Inclusion at J.Crew Group</Link>
+            <Link>Diversity, Equity and Inclusion at Style life  Group</Link>
           </Stack>
           {/* like being first  */}
           <Stack align={"flex-start"} ml={{base: 0, sm: '0', md: '0',lg:'-4rem'}}>

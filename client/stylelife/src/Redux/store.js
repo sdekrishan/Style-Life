@@ -8,10 +8,12 @@
 import thunk from "redux-thunk";
 import { prodReducer } from "./products/ProdReducer";
 import AdminReducer from "./Admin/AdminReducer"; 
+import CartReducer from "./Cart/CartReducer";
 
 const rootReducer = combineReducers({
   prodManager: prodReducer,
-  admin:AdminReducer
+  admin:AdminReducer,
+  cart:CartReducer
 });
 
 

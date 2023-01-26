@@ -6,11 +6,11 @@ export const PaymentText = ({setPaymentOfMethod, PaymentOfMethod}) => {
 
   return (
     <Box>
-      {payment.map((ele) => {
+      {payment.map((ele,ind) => {
         return (
           <Flex  style={{
-            backgroundColor:PaymentOfMethod == ele ? "white" : "#c6d4d9"
-          }} mb="2px"  p="8px" pt="15px" pb="15px" onClick={()=>setPaymentOfMethod(ele)}>
+            backgroundColor:PaymentOfMethod === ele ? "white" : "#c6d4d9"
+          }} mb="2px"  p="8px" pt="15px" pb="15px" onClick={()=>setPaymentOfMethod(ele)} key={ind}>
             <Box>{ele}</Box> <Spacer /><Box>{">"}</Box>
           </Flex>
         );
