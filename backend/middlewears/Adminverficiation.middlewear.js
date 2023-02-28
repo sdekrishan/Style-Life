@@ -7,11 +7,12 @@ const AdminVerification = (req,res,next) => {
     if(token){
         const decodedToken = jwt.verify(token,process.env.ADMINKEY);
         if(decodedToken){
-            req.body.adminId = decodedToken.adminId
+            console.log("inside if adminverification",decodedToken)
             next()
         }
         else{
-            res.send("Please Login!")
+            
+            res.send("Please Login ")
         }
     }
     else{

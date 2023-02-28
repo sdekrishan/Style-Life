@@ -4,10 +4,14 @@ const jwt = require("jsonwebtoken");
 const { UserModel } = require('../models/Users.model');
 const { SpaModel } = require('../models/spa.model');
 const { HealthModel } = require('../models/health.model');
+const { AdminVerification } = require('../middlewears/Adminverficiation.middlewear');
 const AdminRouter = express.Router();
 AdminRouter.use(express.json());
 
+
+AdminRouter.use(AdminVerification)
 // for restaurants
+
 
 AdminRouter.get("/restro",async(req,res)=>{
  try {
@@ -182,9 +186,9 @@ AdminRouter.get("/health",async(req,res)=>{
       let data =await UserModel.find({_id:id});
       if(data.length>0){
          if(data[0].type==='user'){
-            await UserModel.findByIdAndUpdate({_id:id},{type:"admin"});
-            let data = await UserModel.find();
-            res.status(200).send({data,'msg':"user type has been changed"})
+            await UserModel.findByIdAndUpdate({_id:id},req.body);
+            let ndata = await UserModel.find();
+            res.status(200).send({data:ndata,'msg':"user type has been changed"})
          }
          else{
             await UserModel.findByIdAndUpdate({_id:id},{type:"user"});
