@@ -28,7 +28,7 @@ const SignIn = ({
   const PostForSignUp = async (data1) => {
     try {
       let res = await axios.post(
-        "https://shy-blue-centipede-tie.cyclic.app/user/login",
+        "https://busy-cyan-betta-garb.cyclic.app/user/login",
         data1
       );
       console.log(res);

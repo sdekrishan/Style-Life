@@ -1,30 +1,37 @@
+body,html{
+    padding: 0;
+    margin:0;
+}
 .maindiv{
-    background-color: black;
-    background-image: linear-gradient(to right, white , rgb(49, 48, 48));
     height: max-content;
-    width:98vw
+    width:100%;
+    z-index: 0;
+    padding: 0;
+    margin:0;
+    position: absolute;
+    top:4rem;
+    left:0
 }
 .admin_categories{
     width: 100%;
     margin-bottom: 1rem;
     margin-left: auto;
     margin-right: auto;
-    background-color: lightgrey;
+    background-color: #ffe3c3;
     padding: 1rem;
     border-radius: 5px;
 }
 .sidebar{
-    position: fixed;
-    padding:1rem;
-    background-image: linear-gradient(45deg, black, white,black);
-    border-right: 2px solid black;
-        text-align: center;
+    // position: fixed;
+    top:100px;
+    left:10px;
+    text-align: center;
     margin: auto;
-    background-image: linear-gradient(to right, white , rgb(49, 48, 48));
 }
 .rightbar{
-    position: relative ;
-    left: 12%;
-
+    // position: absolute;
+    padding: 1rem;
+    top:100;
+    right: 0;
 }
 

@@ -39,15 +39,15 @@ import {
   ADMIN_USER_SUCCESS,
 } from "./AdminAction";
 
-const admin = JSON.parse(localStorage.getItem("StyleLifeAdminData")) || "";
+
 
 export const getAllRestro = () => (dispatch) => {
   dispatch({ type: ADMIN_RESTRO_REQUEST });
   return axios
-    .get("https://shy-blue-centipede-tie.cyclic.app/admin/restro", {
+    .get("https://busy-cyan-betta-garb.cyclic.app/admin/restro", {
       headers: {
         "Content-type": "application/json",
-        admin: admin.token,
+        admin: JSON.parse(localStorage.getItem("StyleLifeAdminData")).token
       },
     })
     .then((response) =>
@@ -59,10 +59,10 @@ export const getAllRestro = () => (dispatch) => {
 export const getAllSpa = () => (dispatch) => {
   dispatch({ type: ADMIN_SPA_REQUEST });
   return axios
-    .get("https://shy-blue-centipede-tie.cyclic.app/admin/spa", {
+    .get("https://busy-cyan-betta-garb.cyclic.app/admin/spa", {
       headers: {
         "Content-type": "application/json",
-        admin: admin.token,
+        admin:  JSON.parse(localStorage.getItem("StyleLifeAdminData")).token
       },
     })
     .then((response) =>
@@ -73,10 +73,10 @@ export const getAllSpa = () => (dispatch) => {
 export const getAllHealth = () => (dispatch) => {
   dispatch({ type: ADMIN_HEALTH_REQUEST });
   return axios
-    .get("https://shy-blue-centipede-tie.cyclic.app/admin/health", {
+    .get("https://busy-cyan-betta-garb.cyclic.app/admin/health", {
       headers: {
         "Content-type": "application/json",
-        admin: admin.token,
+        admin:  JSON.parse(localStorage.getItem("StyleLifeAdminData")).token
       },
     })
     .then((response) =>
@@ -87,10 +87,10 @@ export const getAllHealth = () => (dispatch) => {
 export const getAllUser = () => (dispatch) => {
   dispatch({ type: ADMIN_USER_REQUEST });
   return axios
-    .get("https://shy-blue-centipede-tie.cyclic.app/admin/users", {
+    .get("https://busy-cyan-betta-garb.cyclic.app/admin/users", {
       headers: {
         "Content-type": "application/json",
-        admin: admin.token,
+        admin: JSON.parse(localStorage.getItem("StyleLifeAdminData")).token
       },
     })
     .then((response) =>
@@ -102,10 +102,10 @@ export const getAllUser = () => (dispatch) => {
 export const AddRestro = (data) => (dispatch) => {
   dispatch({ type: ADMIN_RESTRO_ADD_REQUEST });
   return axios
-    .post(`https://shy-blue-centipede-tie.cyclic.app/admin/restro/post`, data, {
+    .post(`https://busy-cyan-betta-garb.cyclic.app/admin/restro/post`, data, {
       headers: {
         "Content-type": "application/json",
-        admin: admin.token,
+        admin:  JSON.parse(localStorage.getItem("StyleLifeAdminData")).token
       },
     })
     .then((res) =>
@@ -117,11 +117,11 @@ export const DelRestro = (id) => (dispatch) => {
   dispatch({ type: ADMIN_RESTRO_DEL_REQUEST });
   return axios
     .delete(
-      `https://shy-blue-centipede-tie.cyclic.app/admin/restro/delete/${id}`,
+      `https://busy-cyan-betta-garb.cyclic.app/admin/restro/delete/${id}`,
       {
         headers: {
           "Content-type": "application/json",
-          admin: admin.token,
+          admin: JSON.parse(localStorage.getItem("StyleLifeAdminData")).token
         },
       }
     )
@@ -135,12 +135,12 @@ export const UpdateRestro = (data, id) => (dispatch) => {
   dispatch({ type: ADMIN_RESTRO_DEL_REQUEST });
   return axios
     .patch(
-      `https://shy-blue-centipede-tie.cyclic.app/admin/restro/update/${id}`,
+      `https://busy-cyan-betta-garb.cyclic.app/admin/restro/update/${id}`,
       data,
       {
         headers: {
           "Content-type": "application/json",
-          admin: admin.token,
+          admin:  JSON.parse(localStorage.getItem("StyleLifeAdminData")).token,
         },
       }
     )
@@ -153,10 +153,10 @@ export const UpdateRestro = (data, id) => (dispatch) => {
 export const AddSpa = (data) => (dispatch) => {
   dispatch({ type: ADMIN_SPA_ADD_REQUEST });
   return axios
-    .post(`https://shy-blue-centipede-tie.cyclic.app/admin/spa/post`, data, {
+    .post(`https://busy-cyan-betta-garb.cyclic.app/admin/spa/post`, data, {
       headers: {
         "Content-type": "application/json",
-        admin: admin.token,
+        admin:  JSON.parse(localStorage.getItem("StyleLifeAdminData")).token,
       },
     })
     .then((res) =>
@@ -167,15 +167,12 @@ export const AddSpa = (data) => (dispatch) => {
 export const DelSpa = (id) => (dispatch) => {
   dispatch({ type: ADMIN_SPA_DEL_REQUEST });
   return axios
-    .delete(
-      `https://shy-blue-centipede-tie.cyclic.app/admin/spa/delete/${id}`,
-      {
-        headers: {
-          "Content-type": "application/json",
-          admin: admin.token,
-        },
-      }
-    )
+    .delete(`https://busy-cyan-betta-garb.cyclic.app/admin/spa/delete/${id}`, {
+      headers: {
+        "Content-type": "application/json",
+        admin:  JSON.parse(localStorage.getItem("StyleLifeAdminData")).token,
+      },
+    })
     .then((res) => dispatch({ type: ADMIN_SPA_DEL_SUCCESS, payload: res.data }))
     .catch((err) => dispatch({ type: ADMIN_SPA_DEL_ERROR }));
 };
@@ -184,12 +181,12 @@ export const UpdateSpa = (data, id) => (dispatch) => {
   dispatch({ type: ADMIN_SPA_DEL_REQUEST });
   return axios
     .patch(
-      `https://shy-blue-centipede-tie.cyclic.app/admin/spa/update/${id}`,
+      `https://busy-cyan-betta-garb.cyclic.app/admin/spa/update/${id}`,
       data,
       {
         headers: {
           "Content-type": "application/json",
-          admin: admin.token,
+          admin:  JSON.parse(localStorage.getItem("StyleLifeAdminData")).token,
         },
       }
     )
@@ -202,10 +199,10 @@ export const UpdateSpa = (data, id) => (dispatch) => {
 export const AddHealth = (data) => (dispatch) => {
   dispatch({ type: ADMIN_HEALTH_ADD_REQUEST });
   return axios
-    .post(`https://shy-blue-centipede-tie.cyclic.app/admin/health/post`, data, {
+    .post(`https://busy-cyan-betta-garb.cyclic.app/admin/health/post`, data, {
       headers: {
         "Content-type": "application/json",
-        admin: admin.token,
+        admin:  JSON.parse(localStorage.getItem("StyleLifeAdminData")).token,
       },
     })
     .then((res) =>
@@ -217,11 +214,11 @@ export const DelHealth = (id) => (dispatch) => {
   dispatch({ type: ADMIN_HEALTH_DEL_REQUEST });
   return axios
     .delete(
-      `https://shy-blue-centipede-tie.cyclic.app/admin/health/delete/${id}`,
+      `https://busy-cyan-betta-garb.cyclic.app/admin/health/delete/${id}`,
       {
         headers: {
-          "Content-type": "application/json",
-          admin: admin.token,
+          // "Content-type": "application/json",
+          admin:  JSON.parse(localStorage.getItem("StyleLifeAdminData")).token,
         },
       }
     )
@@ -235,12 +232,12 @@ export const UpdateHealth = (data, id) => (dispatch) => {
   dispatch({ type: ADMIN_HEALTH_DEL_REQUEST });
   return axios
     .patch(
-      `https://shy-blue-centipede-tie.cyclic.app/admin/health/update/${id}`,
+      `https://busy-cyan-betta-garb.cyclic.app/admin/health/update/${id}`,
       data,
       {
         headers: {
           "Content-type": "application/json",
-          admin: admin.token,
+          admin:  JSON.parse(localStorage.getItem("StyleLifeAdminData")).token,
         },
       }
     )
@@ -249,14 +246,14 @@ export const UpdateHealth = (data, id) => (dispatch) => {
     )
     .catch((err) => dispatch({ type: ADMIN_HEALTH_UPDATE_ERROR }));
 };
-
+const admin = JSON.parse(localStorage.getItem("StyleLifeAdminData")) || ""
 export const ChangeType = (id) => (dispatch) => {
   dispatch({ type: ADMIN_USER_CHANGE_REQUEST });
   return axios
-    .patch(`https://shy-blue-centipede-tie.cyclic.app/admin/users/type/${id}`, {
+    .patch(`https://busy-cyan-betta-garb.cyclic.app/admin/users/type/${id}`,{type:"admin"}, {
       headers: {
-        "Content-type": "application/json",
-        admin: admin.token,
+        
+        admin:admin.token,
       },
     })
     .then((res) =>

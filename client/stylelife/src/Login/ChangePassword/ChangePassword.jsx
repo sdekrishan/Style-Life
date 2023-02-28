@@ -15,7 +15,7 @@ const ChangePassword = ({ email, name, onClose, setRoute_forgate_Chgange }) => {
   const PostForSignUp = async (data) => {
     try {
       let res = await axios.patch(
-        "https://shy-blue-centipede-tie.cyclic.app/user/setpass",
+        "https://busy-cyan-betta-garb.cyclic.app/user/setpass",
         data
       );
       toast({

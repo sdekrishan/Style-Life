@@ -13,27 +13,28 @@ const PaymentPage = () => {
 
   let token = JSON.parse(localStorage.getItem("StyleLifeUserData")) || "";
   const GetCartData = async () => {
-
     try {
       let res = await axios.get(
-        "https://shy-blue-centipede-tie.cyclic.app/cart/",
+        "https://busy-cyan-betta-garb.cyclic.app/cart/",
         {
           headers: {
-            "Content-type":"application/json",
+            "Content-type": "application/json",
 
             authorization: token.token,
           },
         }
       );
-      console.log(res)
-      return res.data[0].deals
+      console.log(res);
+      return res.data[0].deals;
     } catch (err) {
       console.log(err, "errr");
     }
   };
 
   useEffect(() => {
-    GetCartData().then(r=>console.log(r)).catch(e=>console.log(e));
+    GetCartData()
+      .then((r) => console.log(r))
+      .catch((e) => console.log(e));
     if (token.token === "") {
       navigation("/");
     }

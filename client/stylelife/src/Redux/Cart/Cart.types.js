@@ -9,7 +9,7 @@ const user = JSON.parse(localStorage.getItem("StyleLifeUserData")) || "";
 export const getCart = () => (dispatch) => {
   dispatch({ type: GET_CART_REQUEST });
   return axios
-    .get("https://shy-blue-centipede-tie.cyclic.app/cart/", {
+    .get("https://busy-cyan-betta-garb.cyclic.app/cart/", {
       headers: {
         "Content-type": "application/json",
         Authorization: user.token,

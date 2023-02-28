@@ -20,7 +20,7 @@ const Navbar = () => {
   return (
 
     <>
-    <div className="mobilenav" style={{position:"fixed",zIndex:"3"}}>
+    <div className="mobilenav" >
     
      <Box className='logobox' >
   <Image src={log} alt='Dan Abramov' style={{height:"40px"}} onClick={()=>navigate("/")} />
@@ -28,13 +28,13 @@ const Navbar = () => {
 </Box>
          <Spacer />
  
- <Box className='checkbox'>
+ <Box className='checkbox' >
     <Box className='locationbox'>
         <Image src={loc} alt="location" w={"20px"} />
         <p>Select Location</p>
     </Box>
  <Menu>
-  <MenuButton as={Button} rightIcon={<ChevronDownIcon />}>
+  <MenuButton as={Button} rightIcon={<ChevronDownIcon />} className='menu-btn'>
     Mumbai
   </MenuButton>
   <MenuList>
@@ -82,14 +82,6 @@ const Navbar = () => {
    <HamburgerIcon style={{ color:"black",height:"60px",width:"30px"}} />
     </Button>
   </Box>
-
- 
- <Menu >
-  <MenuButton w={{base:"4rem"}} ml='-19px' p='.5rem' fontSize='.8rem' as={Button}>
-    Mumbai
-  </MenuButton>
-
-</Menu>
  
 
      <Box className='drawer-logo'>
@@ -100,13 +92,7 @@ const Navbar = () => {
          <Box id='drawer-flex'>
          <Box className={"flex"} >
     < >
-    {/* <Image src="https://cdn.icon-icons.com/icons2/2406/PNG/512/user_account_icon_145918.png" alt="acntlogo" 
-     style={{height:"25px"}}
-
-    />
-    <Button bg={"none"}> <Link to="/login">Login</Link> </Button>
-
-    /> */}
+ 
 
     <ModalLogin title={"yes"} />
    
@@ -131,19 +117,17 @@ const Navbar = () => {
         <DrawerContent>
           <DrawerCloseButton />
           <Box >
-  <Image src={log} alt='Dan Abramov' onClick={()=>navigate("/")} />
+  <Image src={log} alt='Dan Abramov' width={'50%'} marginInline='auto' onClick={()=>navigate("/")} />
 </Box>
 
           <DrawerBody>
           <Box >
           {links.map((el,ind)=>{
             return (
-             <Box className='drawernavbar' key={ind}>
-               <UnorderedList>
-                 <ListItem key={el.title} className="navlink" onClick={()=>navigate(`${el.path}`)}>{el.title} </ListItem>
-              </UnorderedList>
-              <Image src={el.logo} alt="logo"  h={"30px"} />
-             </Box>
+             <Flex marginInline='auto' justifyContent={'space-evenly'} alignItems='center' className='drawernavbar' w='80%' key={ind}>
+                 <Text key={el.title} className="navlink" onClick={()=>navigate(`${el.path}`)}>{el.title}</Text>
+              <Image src={el.logo} alt="logo" h={"25px"} />
+             </Flex>
             )
         })}
 

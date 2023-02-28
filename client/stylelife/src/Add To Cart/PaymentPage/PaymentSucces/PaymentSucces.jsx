@@ -14,13 +14,13 @@ export const PaymentSucces = () => {
   const deleteCart = async () => {
     try {
       let res = await axios.delete(
-        "https://shy-blue-centipede-tie.cyclic.app/cart/delete",
+        "https://busy-cyan-betta-garb.cyclic.app/cart/delete",
         {
           headers: {
             "Content-type": "application/json",
             Authorization: user.token,
           },
-        }   
+        }
       );
       console.log(res);
     } catch (error) {

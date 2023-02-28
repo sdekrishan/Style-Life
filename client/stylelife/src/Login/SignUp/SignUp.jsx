@@ -19,7 +19,7 @@ const SignUp = ({
   const PostForSignUp = async (data) => {
     try {
       let res = await axios.post(
-        "https://shy-blue-centipede-tie.cyclic.app/user/register",
+        "https://busy-cyan-betta-garb.cyclic.app/user/register",
         data
       );
 
@@ -54,7 +54,7 @@ const SignUp = ({
   };
 
   const HandelSubmit = () => {
-    if (email == "" || name == "" || password == "") {
+    if (email === "" || name === "" || password === "") {
       toast({
         position: "top",
         title: "Input Error.",

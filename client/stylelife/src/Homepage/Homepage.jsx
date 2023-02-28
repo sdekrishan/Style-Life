@@ -177,8 +177,8 @@ const Homepage = () => {
 
    <div className='firstcrauser'>
    <Carousel infiniteLoop autoPlay showThumbs={false}>
-   {silderimages.map((el)=>{
-    return <div id="sliderimages" key={el.src}>
+   {silderimages.map((el,ind)=>{
+    return <div id="sliderimages" key={ind}>
         <Image src={el.src}  alt="sliding" />
     </div>
    })}
@@ -189,9 +189,9 @@ const Homepage = () => {
    <div className='brands'>
     <h1 as={"h2"}>Top Brands</h1>
     <Slider {...settings}>
-    {brandsdata.map((el)=>{
+    {brandsdata.map((el,ind)=>{
         return (
-            <div className='brandlogo' key={el.id}>
+            <div className='brandlogo' key={ind}>
                 <Image src={el.logo} alt="brands" />
                
             </div>
@@ -207,9 +207,9 @@ const Homepage = () => {
 
       <Box className='dealbox'>
      
-       {nearbydata.map((el)=>{
+       {nearbydata.map((el,ind)=>{
   return (
-    <Box className='insidenearby' key={el.id}>
+    <Box className='insidenearby' key={ind}>
     <Image src={el.logo} alt={el.alt} />
     <hr />
     <Text  >{el.tag}</Text>
@@ -276,9 +276,9 @@ const Homepage = () => {
      <h1>Relaxing Massages</h1>
      </Box>
       <div className='nextthingbox'>
-        {relaxingdata.map((el)=>{
+        {relaxingdata.map((el,ind)=>{
             return (
-                <Box className='insidenextthing' key={el.id}>
+                <Box className='insidenextthing' key={ind}>
            <Image src={el.logo} />
            <Text fontSize='xl' as='b'>{el.tag}</Text>
                 </Box>
@@ -290,10 +290,10 @@ const Homepage = () => {
       <div className='promobox'>
     <h1 >Promo Codes For More Savings</h1>
     <Slider {...promo}>
-    {promocodedata.map((el)=>{
+    {promocodedata.map((el,ind)=>{
         return (
             <>
-            <div className='promologo' key={el.id}>
+            <div className='promologo' key={ind}>
                 <Image src={el.logo} alt="brands" />
                
             </div>

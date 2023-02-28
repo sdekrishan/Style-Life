@@ -48,7 +48,7 @@ const SingleProduct = () => {
   const deleteCart = async () => {
     try {
       let res = await axios.delete(
-        "https://shy-blue-centipede-tie.cyclic.app/cart/delete",
+        "https://busy-cyan-betta-garb.cyclic.app/cart/delete",
         {
           headers: {
             "Content-type": "application/json",
@@ -65,7 +65,7 @@ const SingleProduct = () => {
   let user = JSON.parse(localStorage.getItem("StyleLifeUserData")) || {};
   const getCategoryData = () => {
     axios
-      .get(`https://shy-blue-centipede-tie.cyclic.app/${loca}/${id}`)
+      .get(`https://busy-cyan-betta-garb.cyclic.app/${loca}/${id}`)
       .then((r) => {
         setRestro(r.data);
         setDeals(r.data.deals);
@@ -85,47 +85,47 @@ const SingleProduct = () => {
     getCategoryData();
   }, []);
 
-  const handleCloseButton = () => {
-    navigate("/");
-    onClose();
-  };
-  const handleOpenButton = () => {
-    deleteCart();
-    setTotalCart([]);
-    onClose();
-  };
+  // const handleCloseButton = () => {
+  //   navigate("/");
+  //   onClose();
+  // };
+  // const handleOpenButton = () => {
+  //   deleteCart();
+  //   setTotalCart([]);
+  //   onClose();
+  // };
   console.log(totalCart);
-    // useEffect(() => {
-    //   console.log("working total cart use effect", totalCart);
-    //   if (totalCart.length == 0) {
-    //     return (
-    //       <>
-    //         <Modal isOpen={isOpen} onClose={onClose}>
-    //           <ModalOverlay />
-    //           <ModalContent>
-    //             <ModalHeader>Modal Title</ModalHeader>
-    //             <ModalCloseButton />
-    //             <ModalBody>
-    //               Product already in cart. If you proceed your previous entire
-    //               cart will be empty.
-    //               <Divider />
-    //               Do you want to continue?
-    //             </ModalBody>
+  // useEffect(() => {
+  //   console.log("working total cart use effect", totalCart);
+  //   if (totalCart.length == 0) {
+  //     return (
+  //       <>
+  //         <Modal isOpen={isOpen} onClose={onClose}>
+  //           <ModalOverlay />
+  //           <ModalContent>
+  //             <ModalHeader>Modal Title</ModalHeader>
+  //             <ModalCloseButton />
+  //             <ModalBody>
+  //               Product already in cart. If you proceed your previous entire
+  //               cart will be empty.
+  //               <Divider />
+  //               Do you want to continue?
+  //             </ModalBody>
 
-    //             <ModalFooter>
-    //               <Button colorScheme="blue" mr={3} onClick={handleCloseButton}>
-    //                 No
-    //               </Button>
-    //               <Button variant="ghost" onClick={handleOpenButton}>
-    //                 Yes
-    //               </Button>
-    //             </ModalFooter>
-    //           </ModalContent>
-    //         </Modal>
-    //       </>
-    //     );
-    //   }
-    // }, []);
+  //             <ModalFooter>
+  //               <Button colorScheme="blue" mr={3} onClick={handleCloseButton}>
+  //                 No
+  //               </Button>
+  //               <Button variant="ghost" onClick={handleOpenButton}>
+  //                 Yes
+  //               </Button>
+  //             </ModalFooter>
+  //           </ModalContent>
+  //         </Modal>
+  //       </>
+  //     );
+  //   }
+  // }, []);
 
   const handleCheck = () => {
     console.log("Checked out", user);
@@ -157,7 +157,7 @@ const SingleProduct = () => {
   const handleAdd = (el) => {
     axios
       .post(
-        `https://shy-blue-centipede-tie.cyclic.app/cart/add`,
+        `https://busy-cyan-betta-garb.cyclic.app/cart/add`,
         {
           restro,
           deals: el,
@@ -427,7 +427,7 @@ const SingleProduct = () => {
               >
                 <Box display={"flex"} flexDirection="column" p={"14px 0px"}>
                   {/* Map starts here */}
-                  {totalCart.length > 0 ? (
+                  {totalCart.length ? (
                     totalCart.map((e, i) => (
                       <Box
                         display={"flex"}

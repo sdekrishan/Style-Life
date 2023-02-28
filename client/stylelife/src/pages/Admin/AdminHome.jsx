@@ -40,6 +40,8 @@ const AdminHome = () => {
       dispatch(getAllRestro())
     },[]);
 
+    console.log(restro)
+
     const handleUser = ()=>{
       setRestValue(false);
       setSpaValue(false);
@@ -80,61 +82,64 @@ const handleHealthPost = (e)=>{
   };
   dispatch(AddHealth( payload))
 }
+if(AdminLoading ){
+  return <Loader/>
+}
 
   return (
-    <Flex className='maindiv' >
-    <Box w='25%' h='100vh' className='sidebar'>
+    <Flex className='maindiv'  flexDirection={{base:"column",sm:"column",md:"row",lg:"row"}}>
+    <Box w={{base:"80%",sm:"80%",md:"25%"}} h='fit-content' position={{base:"static",sm:"static",md:"fixed",lg:"fixed"}} className='sidebar'>
+    <Box display={'flex'} flexDirection='column' h='fit-content'>
     <Text fontWeight={'bold'} fontSize='lg' mb='2rem'>DashBoard</Text>
-    <Box display={'flex'} flexDirection='column'>
        
         <ButtonGroup w={"100%"}  isAttached variant='outline' >
-        <Button  className='admin_categories' fontSize={{base:"xx-small",sm:"sm",md:"md"}} onClick={()=>{
+        <Button  className='admin_categories' fontSize={{base:"sm",sm:"sm",md:"md"}} onClick={()=>{
           setRestValue(true);
           dispatch(getAllRestro ());
           setSpaValue(false);
           setHealthValue(false);
         }}>Restaurants</Button>
-  <IconButton aria-label='Add to friends' icon={<AddIcon />} onClick={OnRestroOpen} />
+  <IconButton aria-label='Add to friends' icon={<AddIcon  />} backgroundColor={'#ef534e'} onClick={OnRestroOpen} />
 </ButtonGroup>
 
 <ButtonGroup  w={"100%"} isAttached variant='outline'>
-<Button className='admin_categories' fontSize={{base:"xx-small",sm:"sm",md:"md"}} onClick={()=>{
+<Button className='admin_categories' fontSize={{base:"sm",sm:"sm",md:"md"}} onClick={()=>{
                setRestValue(false);
                setSpaValue(true);
                dispatch(getAllSpa());
                setHealthValue(false);
         }}>Spa</Button>
-  <IconButton aria-label='Add to friends' icon={<AddIcon />} onClick={OnSpaOpen}/>
+  <IconButton aria-label='Add to friends' icon={<AddIcon />} backgroundColor={'#ef534e'} onClick={OnSpaOpen}/>
 </ButtonGroup>
     
 
 <ButtonGroup w={"100%"} isAttached variant='outline'>
-<Button className='admin_categories' fontSize={{base:"xx-small",sm:"sm",md:"md"}} onClick={()=>{
+<Button className='admin_categories' fontSize={{base:"sm",sm:"sm",md:"md"}} onClick={()=>{
                setRestValue(false);
                setSpaValue(false);
                setHealthValue(true);
                dispatch(getAllHealth())
         }}>Health</Button>
-  <IconButton aria-label='Add to friends' icon={<AddIcon />} onClick={OnHealthOpen} />
+  <IconButton aria-label='Add to friends' icon={<AddIcon />} backgroundColor={'#ef534e'} onClick={OnHealthOpen} />
 </ButtonGroup>
        
 <ButtonGroup w={"100%"} isAttached variant='outline'>
-<Button className='admin_categories' fontSize={{base:"xx-small",sm:"sm",md:"md"}} onClick={handleUser}>Users</Button>
+<Button className='admin_categories' fontSize={{base:"sm",sm:"sm",md:"md"}} onClick={handleUser}>Users</Button>
   </ButtonGroup>
 
 
         
     </Box>
     </Box>
-     <Box w='72%' m='auto' className='rightbar' >
-    <Text fontSize={'lg'} fontWeight='bold' fontStyle={'italic'}>{restValue ? "Restaurants" : spaValue ? "Spa" : "Health"}</Text>
+     <Box w={{base:"80%",sm:"80%",md:"72%"}} mt={{base:"2rem",sm:"2rem",md:"0"}}  marginInline='auto' className='rightbar' position={{base:"static",sm:"static",md:"absolute",lg:"absolute"}}  >
+    <Text fontSize={'lg'} fontWeight='bold' fontStyle={'italic'}>{restValue ? "Restaurants" : spaValue ? "Spa" : healthValue ? "Health" : "Users And Admin"}</Text>
     <Grid className='divide-section' w='full' templateColumns={{sm:"repeat(2,1fr)",md:"repeat(3,1fr)"}} gap='1rem' padding='1rem' >
 
     {
       restValue ? restro?.map((el,ind)=><AdminRestro key={ind} Data={el} />)
     : spaValue ? spa?.map((el,ind)=><AdminSpa Data={el} key={ind}/>)
     : healthValue ? health?.map((el,ind)=><AdminHealth key={ind} Data={el}/>)
-    : user.map((el,ind)=><AdminUser key={ind} Data={el}/>)
+    : user?.map((el,ind)=><AdminUser key={ind} Data={el}/>)
 
     }
 

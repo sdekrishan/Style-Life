@@ -1,8 +1,7 @@
-import { Box, Button, Flex, Grid, Image, Input, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure } from '@chakra-ui/react'
-
-import React, { useState } from 'react'
+import { Box, Button, Flex,  Image,  Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, Text, useDisclosure } from '@chakra-ui/react'
+import React from 'react'
 import { useDispatch } from 'react-redux'
-import { ChangeType, DelSpa , UpdateSpa } from '../../../Redux/Admin/AdminTypes'
+import { ChangeType, } from '../../../Redux/Admin/AdminTypes'
 import "./AdminUser.scss"
 const AdminUser = ({Data}) => {
   const { isOpen:isDeleteOpen, onOpen:OnDeleteOpen, onClose:onDeleteClose } = useDisclosure(); 
@@ -38,7 +37,7 @@ const AdminUser = ({Data}) => {
     <Box className="flip-card-inner">
         <Box className="flip-card-front">
         <Flex flexDirection={'column'}>
-        <Box w='70%' m='auto' >
+        <Box w='70%' m='auto'>
 
         <Image src={Data.type==='user' ? "https://www.citypng.com/public/uploads/small/11640168385jtmh7kpmvna5ddyynoxsjy5leb1nmpvqooaavkrjmt9zs7vtvuqi4lcwofkzsaejalxn7ggpim4hkg0wbwtzsrp1ldijzbdbsj5z.png" :"https://icon-library.com/images/head-admin-icon-ts3/head-admin-icon-ts3-13.jpg"} alt=""  />
         </Box>
