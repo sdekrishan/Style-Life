@@ -8,7 +8,7 @@ import { useState } from 'react';
 import AdminSpa from './AdminSpa/AdminSpa';
 import AdminRestro from './AdminRestro.jsx/AdminRestro';
 import AdminHealth from './AdminHealth/AdminHealth';
-import Loader from '../../Components/Loader/Loader';
+import Loader from '../../components/Loader/Loader';
 import AdminUser from './AdminUser/AdminUser';
 import { AddIcon } from '@chakra-ui/icons';
 import axios from 'axios';

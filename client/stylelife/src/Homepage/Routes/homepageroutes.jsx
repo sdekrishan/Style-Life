@@ -1,12 +1,12 @@
 import { Routes, Route } from "react-router-dom";
 import React from "react";
 import Homepage from "../Homepage";
-import Products from "../../Components/Products";
-import SingleProduct from "../../Components/SingleProduct";
+import Products from "../../components/Products";
+import SingleProduct from "../../components/SingleProduct";
 import PaymentPage from "../../Add To Cart/PaymentPage/PaymentPage";
-import AdminHome from "../../Pages/Admin/AdminHome";
-import ErrorPage from "../../Components/ErrorPage";
-import PrivateRoute from "../../Components/PrivateRoute";
+import AdminHome from "../../pages/Admin/AdminHome";
+import ErrorPage from "../../components/ErrorPage";
+import PrivateRoute from "../../components/PrivateRoute";
 import Saloon from "../pages/Saloon";
 import Buffetpage from '../../Homepage/pages/Buffetpage'
 const Homepageroutes = () => {
