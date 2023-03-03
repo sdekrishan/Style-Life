@@ -45,12 +45,7 @@ const admin = JSON.parse(localStorage.getItem("StyleLifeAdminData")) || ""
 export const getAllRestro = () => (dispatch) => {
   dispatch({ type: ADMIN_RESTRO_REQUEST });
   return axios
-  .get("https://busy-cyan-betta-garb.cyclic.app/admin/restro", {
-    headers: {
-      "Content-type": "application/json",
-        admin: admin.token
-      },
-    })
+  .get("https://busy-cyan-betta-garb.cyclic.app/admin/restro")
     .then((response) =>
       dispatch({ type: ADMIN_RESTRO_SUCCESS, payload: response.data })
     )
@@ -60,12 +55,7 @@ export const getAllRestro = () => (dispatch) => {
 export const getAllSpa = () => (dispatch) => {
   dispatch({ type: ADMIN_SPA_REQUEST });
   return axios
-    .get("https://busy-cyan-betta-garb.cyclic.app/admin/spa", {
-      headers: {
-        "Content-type": "application/json",
-        admin: admin.token
-      },
-    })
+    .get("https://busy-cyan-betta-garb.cyclic.app/admin/spa")
     .then((response) =>
       dispatch({ type: ADMIN_SPA_SUCCESS, payload: response.data })
     )
@@ -74,12 +64,7 @@ export const getAllSpa = () => (dispatch) => {
 export const getAllHealth = () => (dispatch) => {
   dispatch({ type: ADMIN_HEALTH_REQUEST });
   return axios
-    .get("https://busy-cyan-betta-garb.cyclic.app/admin/health", {
-      headers: {
-        "Content-type": "application/json",
-        admin: admin.token
-      },
-    })
+    .get("https://busy-cyan-betta-garb.cyclic.app/admin/health")
     .then((response) =>
       dispatch({ type: ADMIN_HEALTH_SUCCESS, payload: response.data })
     )
@@ -88,12 +73,7 @@ export const getAllHealth = () => (dispatch) => {
 export const getAllUser = () => (dispatch) => {
   dispatch({ type: ADMIN_USER_REQUEST });
   return axios
-    .get("https://busy-cyan-betta-garb.cyclic.app/admin/users", {
-      headers: {
-        "Content-type": "application/json",
-        admin: admin.token
-      },
-    })
+    .get("https://busy-cyan-betta-garb.cyclic.app/admin/users")
     .then((response) =>
       dispatch({ type: ADMIN_USER_SUCCESS, payload: response.data })
     )
@@ -103,12 +83,7 @@ export const getAllUser = () => (dispatch) => {
 export const AddRestro = (data) => (dispatch) => {
   dispatch({ type: ADMIN_RESTRO_ADD_REQUEST });
   return axios
-    .post(`https://busy-cyan-betta-garb.cyclic.app/admin/restro/post`, data, {
-      headers: {
-        "Content-type": "application/json",
-        admin: admin.token
-      },
-    })
+    .post(`https://busy-cyan-betta-garb.cyclic.app/admin/restro/post`, data)
     .then((res) =>
       dispatch({ type: ADMIN_RESTRO_ADD_SUCCESS, payload: res.data.alldata })
     )
@@ -118,13 +93,7 @@ export const DelRestro = (id) => (dispatch) => {
   dispatch({ type: ADMIN_RESTRO_DEL_REQUEST });
   return axios
     .delete(
-      `https://busy-cyan-betta-garb.cyclic.app/admin/restro/delete/${id}`,
-      {
-        headers: {
-          "Content-type": "application/json",
-          admin: admin.token
-        },
-      }
+      `https://busy-cyan-betta-garb.cyclic.app/admin/restro/delete/${id}`
     )
     .then((res) =>
       dispatch({ type: ADMIN_RESTRO_DEL_SUCCESS, payload: res.data })
@@ -137,13 +106,7 @@ export const UpdateRestro = (data, id) => (dispatch) => {
   return axios
     .patch(
       `https://busy-cyan-betta-garb.cyclic.app/admin/restro/update/${id}`,
-      data,
-      {
-        headers: {
-          "Content-type": "application/json",
-          admin:  admin.token,
-        },
-      }
+      data
     )
     .then((res) =>
       dispatch({ type: ADMIN_RESTRO_DEL_SUCCESS, payload: res.data.alldata })
@@ -154,12 +117,7 @@ export const UpdateRestro = (data, id) => (dispatch) => {
 export const AddSpa = (data) => (dispatch) => {
   dispatch({ type: ADMIN_SPA_ADD_REQUEST });
   return axios
-    .post(`https://busy-cyan-betta-garb.cyclic.app/admin/spa/post`, data, {
-      headers: {
-        "Content-type": "application/json",
-        admin:  admin.token,
-      },
-    })
+    .post(`https://busy-cyan-betta-garb.cyclic.app/admin/spa/post`, data)
     .then((res) =>
       dispatch({ type: ADMIN_SPA_ADD_SUCCESS, payload: res.data.alldata })
     )
@@ -168,12 +126,7 @@ export const AddSpa = (data) => (dispatch) => {
 export const DelSpa = (id) => (dispatch) => {
   dispatch({ type: ADMIN_SPA_DEL_REQUEST });
   return axios
-    .delete(`https://busy-cyan-betta-garb.cyclic.app/admin/spa/delete/${id}`, {
-      headers: {
-        "Content-type": "application/json",
-        admin:  admin.token,
-      },
-    })
+    .delete(`https://busy-cyan-betta-garb.cyclic.app/admin/spa/delete/${id}`)
     .then((res) => dispatch({ type: ADMIN_SPA_DEL_SUCCESS, payload: res.data }))
     .catch((err) => dispatch({ type: ADMIN_SPA_DEL_ERROR }));
 };
@@ -183,13 +136,7 @@ export const UpdateSpa = (data, id) => (dispatch) => {
   return axios
     .patch(
       `https://busy-cyan-betta-garb.cyclic.app/admin/spa/update/${id}`,
-      data,
-      {
-        headers: {
-          "Content-type": "application/json",
-          admin:  admin.token,
-        },
-      }
+      data
     )
     .then((res) =>
       dispatch({ type: ADMIN_SPA_UPDATE_SUCCESS, payload: res.data.alldata })
@@ -200,12 +147,7 @@ export const UpdateSpa = (data, id) => (dispatch) => {
 export const AddHealth = (data) => (dispatch) => {
   dispatch({ type: ADMIN_HEALTH_ADD_REQUEST });
   return axios
-    .post(`https://busy-cyan-betta-garb.cyclic.app/admin/health/post`, data, {
-      headers: {
-        "Content-type": "application/json",
-        admin:  admin.token,
-      },
-    })
+    .post(`https://busy-cyan-betta-garb.cyclic.app/admin/health/post`, data)
     .then((res) =>
       dispatch({ type: ADMIN_HEALTH_ADD_SUCCESS, payload: res.data.alldata })
     )
@@ -215,13 +157,7 @@ export const DelHealth = (id) => (dispatch) => {
   dispatch({ type: ADMIN_HEALTH_DEL_REQUEST });
   return axios
     .delete(
-      `https://busy-cyan-betta-garb.cyclic.app/admin/health/delete/${id}`,
-      {
-        headers: {
-          // "Content-type": "application/json",
-          admin:  admin.token,
-        },
-      }
+      `https://busy-cyan-betta-garb.cyclic.app/admin/health/delete/${id}`
     )
     .then((res) =>
       dispatch({ type: ADMIN_HEALTH_DEL_SUCCESS, payload: res.data.alldata })
@@ -234,13 +170,7 @@ export const UpdateHealth = (data, id) => (dispatch) => {
   return axios
     .patch(
       `https://busy-cyan-betta-garb.cyclic.app/admin/health/update/${id}`,
-      data,
-      {
-        headers: {
-          "Content-type": "application/json",
-          admin:  admin.token,
-        },
-      }
+      data
     )
     .then((res) =>
       dispatch({ type: ADMIN_HEALTH_UPDATE_SUCCESS, payload: res.data.alldata })
@@ -250,11 +180,7 @@ export const UpdateHealth = (data, id) => (dispatch) => {
 export const ChangeType = (id) => (dispatch) => {
   dispatch({ type: ADMIN_USER_CHANGE_REQUEST });
   return axios
-    .patch(`https://busy-cyan-betta-garb.cyclic.app/admin/users/type/${id}`,{type:"admin"}, {
-      headers: {
-        admin:admin.token,
-      },
-    })
+    .patch(`https://busy-cyan-betta-garb.cyclic.app/admin/users/type/${id}`,{type:"admin"})
     .then((res) =>
       dispatch({ type: ADMIN_USER_CHANGE_SUCCESS, payload: res.data.data })
     )

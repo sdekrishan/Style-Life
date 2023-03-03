@@ -245,7 +245,7 @@ const Homepage = () => {
       
       </div>
        
-      <Box className='nearbyheading'>
+      <Box className='nearbyheading' >
      <h1>Next Thing on Your Mind!</h1>
      </Box>
       <div className='nextthingbox'>

@@ -136,7 +136,7 @@ if(AdminLoading ){
     <Grid className='divide-section' w='full' templateColumns={{sm:"repeat(2,1fr)",md:"repeat(3,1fr)"}} gap='1rem' padding='1rem' >
 
     {
-      restValue ? restro?.map((el,ind)=><AdminRestro key={ind} Data={el} />)
+      restValue ? restro.length > 0 && restro?.map((el,ind)=><AdminRestro key={ind} Data={el} />)
     : spaValue ? spa?.map((el,ind)=><AdminSpa Data={el} key={ind}/>)
     : healthValue ? health?.map((el,ind)=><AdminHealth key={ind} Data={el}/>)
     : user?.map((el,ind)=><AdminUser key={ind} Data={el}/>)
