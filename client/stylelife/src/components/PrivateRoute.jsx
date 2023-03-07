@@ -1,10 +1,12 @@
 import React from 'react'
+import { useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom'
 
 const PrivateRoute = ({children}) => {
-    let user =JSON.parse( localStorage.getItem("StyleLifeAdminData"))|| "";
     // console.log(user);
-    if(user.token){
+    const token = JSON.parse(localStorage.getItem("StyleLifeAdminData")) || ""
+    // const {adminToken} = useSelector(store=> store.auth)
+    if(token){
         return children
     }
     else{

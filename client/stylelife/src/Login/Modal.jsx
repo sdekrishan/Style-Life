@@ -73,12 +73,6 @@ const ModalLogin = ({ title }) => {
           <Modal isOpen={isOpen} onClose={onClose} >
             <ModalOverlay />
             <ModalContent
-              // m="3.5rem"
-              // pl="0px"
-              // pb="10px"
-              // pr={["10px", "720px"]} 
-              // w={["25rem", "80rem"]}
-              // w='50vw'
               p='1rem'
               maxW={{base:'100vw',sm:"100vw",md:"70vw",lg:"55vw"}}
             >
