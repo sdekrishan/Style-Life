@@ -26,12 +26,10 @@ const Login = ({ onClose, setAdmin }) => {
 
   return (
     <Box
-      w={["55rem", "49rem", "70rem"]}
       display={["grid", "flex", "flex"]}
-      m="auto"
-      mt="5rem"
+      justifyContent='space-between'
     >
-      <Box w={["40%", "20%"]} className={style.first_box_login}>
+      <Box className={style.first_box_login} marginInline={'auto'} w={{base:'90%',sm:'90%',md:"60%",lg:'40%'}}>
         <Box>
           <Box>
             <Image src="http://www.nearbuy.com/static/images/nb-logo.png" />
@@ -43,7 +41,7 @@ const Login = ({ onClose, setAdmin }) => {
         </Box>
       </Box>
 
-      <Box className={style.second_Box_login}>
+      <Box className={style.second_Box_login} w={{base:'100%',sm:'100%',md:"60%",lg:'60%'}}  >
         {ButtonTomove ? (
           <SignUp
             HandelChange={HandelChange}

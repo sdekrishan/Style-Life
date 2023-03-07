@@ -16,11 +16,8 @@ import {
   Stack,
   Text,
   Flex,
-  Tag,
-  useColorModeValue,
   Input,
   Button,
-  Image,
 } from "@chakra-ui/react";
 
 export default function Footer() {

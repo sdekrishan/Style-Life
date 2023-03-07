@@ -4,8 +4,9 @@ import ReCapture from "../pages/reCapture/reCapture";
 import style from "./style/SignIn.module.css";
 import { useNavigate } from "react-router-dom";
 import { useToast } from "@chakra-ui/react";
-import ForgatePassword from "../ForgatePassword/ForgatePassword";
 import axios from "axios";
+import { loginAction } from "../../Redux/Auth/Auth.actions";
+import { useDispatch } from "react-redux";
 
 const SignIn = ({
   name,
@@ -24,13 +25,10 @@ const SignIn = ({
   const [password, setPassword] = useState("");
 
   const navigation = useNavigate();
-
+const dispatch = useDispatch()
   const PostForSignUp = async (data1) => {
     try {
-      let res = await axios.post(
-        "https://busy-cyan-betta-garb.cyclic.app/user/login",
-        data1
-      );
+      let res =await dispatch(loginAction(data1))
       console.log(res);
       if (res.data.msg === "login successful") {
         toast({
@@ -129,7 +127,7 @@ const SignIn = ({
   };
 
   return (
-    <Box className={style.mainBox} mt={"60px"}>
+    <Box className={style.mainBox} >
       <Box>
         <Heading color={"#666"} as="h4" size="xl">
           Login

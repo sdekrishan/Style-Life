@@ -5,28 +5,16 @@ import {
   Image,
   Text,
   Flex,
-  ButtonGroup,
-  IconButton,
-  ModalBody,
-  ModalFooter,
-  ModalHeader,
-  ModalCloseButton,
-  ModalContent,
-  ModalOverlay,
-  Modal,
   useDisclosure,
-  Divider,
 } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import "./SingleProduct.css";
 import axios from "axios";
 import {
-  Navigate,
   useLocation,
   useNavigate,
   useParams,
-  useSearchParams,
 } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
@@ -43,7 +31,7 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
   const [cart, setCart] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure({ defaultIsOpen: true });
-
+  const{token } = useSelector(store=>store.auth)
   let loca = location.search.split("?").join("");
   const deleteCart = async () => {
     try {
@@ -73,7 +61,7 @@ const SingleProduct = () => {
       .catch((e) => console.log(e));
   };
   useEffect(() => {
-    dispatch(getCart())
+    dispatch(getCart(token))
       .then((r) => {
         console.log(r);
         setTotalCart(r.payload[0].deals);
@@ -85,47 +73,9 @@ const SingleProduct = () => {
     getCategoryData();
   }, []);
 
-  // const handleCloseButton = () => {
-  //   navigate("/");
-  //   onClose();
-  // };
-  // const handleOpenButton = () => {
-  //   deleteCart();
-  //   setTotalCart([]);
-  //   onClose();
-  // };
-  console.log(totalCart);
-  // useEffect(() => {
-  //   console.log("working total cart use effect", totalCart);
-  //   if (totalCart.length == 0) {
-  //     return (
-  //       <>
-  //         <Modal isOpen={isOpen} onClose={onClose}>
-  //           <ModalOverlay />
-  //           <ModalContent>
-  //             <ModalHeader>Modal Title</ModalHeader>
-  //             <ModalCloseButton />
-  //             <ModalBody>
-  //               Product already in cart. If you proceed your previous entire
-  //               cart will be empty.
-  //               <Divider />
-  //               Do you want to continue?
-  //             </ModalBody>
 
-  //             <ModalFooter>
-  //               <Button colorScheme="blue" mr={3} onClick={handleCloseButton}>
-  //                 No
-  //               </Button>
-  //               <Button variant="ghost" onClick={handleOpenButton}>
-  //                 Yes
-  //               </Button>
-  //             </ModalFooter>
-  //           </ModalContent>
-  //         </Modal>
-  //       </>
-  //     );
-  //   }
-  // }, []);
+  console.log(totalCart);
+
 
   const handleCheck = () => {
     console.log("Checked out", user);
@@ -516,7 +466,6 @@ const SingleProduct = () => {
                   }}
                   fontFamily={"Open Sans sans-serif"}
                   borderRadius="3px"
-                  // onClick={() => handleCheck()}
                   onClick={handleCheck}
                 >
                   BUY NOW
@@ -642,7 +591,6 @@ const SingleProduct = () => {
       </Box>
       <Footer />
     </Box>
-    // <div>hi</div>
   );
 };
 

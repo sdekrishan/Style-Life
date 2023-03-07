@@ -1,12 +1,4 @@
-.mainBox {
-  /* border: 1px solid red;
-  width: 75%;
-  margin: auto;
-  height: 40vh;
-  margin-top: 5rem;
-  display: flex;
-  background-color: white; */
-}
+
 
 .first_box_login{
   background-color: #ef534e;
@@ -23,6 +15,6 @@
 
 .second_Box_login {
  padding: 15px;
- width: 40%;
+ /* width: 40%; */
 }
 

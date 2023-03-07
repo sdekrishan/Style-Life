@@ -5,27 +5,22 @@ import {
   Spacer,
   Text,
   Heading,
-  Image,
   Button,
-  useToast,
 } from "@chakra-ui/react";
 import React, { useEffect } from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import {  useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 import { getCart } from "../../../../Redux/Cart/Cart.types";
 import style from "./styles/OrderSummary.module.css";
 
 const OrderSummary = ({ CartDataid }) => {
-
-
-  // let cartData = JSON.parse(localStorage.getItem("cartData")) || "null";
   const [List, setList] = useState(true);
-  const [cartData,setCartData] = useState([])
+  const [cartData,setCartData] = useState([]);
+  const {token} = useSelector(store => store.auth)
   const dispatch = useDispatch();
 
   useEffect(()=>{
-    dispatch(getCart())
+    dispatch(getCart(token))
     .then(r=>{
       console.log("r", r) 
       setCartData(r.payload[0].deals) 

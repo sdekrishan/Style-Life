@@ -52,7 +52,7 @@ const ModalLogin = ({ title }) => {
 
   return (
    <>
-    <Box>
+    <Box >
       {UserLogin && Admin !== "Admin" ?  (
         <>
           <Button bg="none" w="auto" onClick={()=>{
@@ -70,14 +70,17 @@ const ModalLogin = ({ title }) => {
             )}
           </Button>
        
-          <Modal isOpen={isOpen} onClose={onClose}>
+          <Modal isOpen={isOpen} onClose={onClose} >
             <ModalOverlay />
             <ModalContent
-              m="3.5rem"
-              pl="0px"
-              pb="10px"
-              pr={["10px", "720px"]}
-              w={["25rem", "80rem"]}
+              // m="3.5rem"
+              // pl="0px"
+              // pb="10px"
+              // pr={["10px", "720px"]} 
+              // w={["25rem", "80rem"]}
+              // w='50vw'
+              p='1rem'
+              maxW={{base:'100vw',sm:"100vw",md:"70vw",lg:"55vw"}}
             >
               <ModalCloseButton />
               <ModalBody>
