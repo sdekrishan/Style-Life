@@ -7,7 +7,9 @@ html,body{
   cursor: pointer;
  }
 
- 
+ input:focus .searchbox{
+  display: block;
+ }
 
 .mobilenav{
     width: 100vw;
