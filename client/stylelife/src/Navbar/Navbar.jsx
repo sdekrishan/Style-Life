@@ -1,15 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import  "../Navbar/Navbar.css";
 import {Box, Button, Drawer, DrawerBody, DrawerCloseButton, DrawerContent, DrawerFooter, DrawerHeader, DrawerOverlay, Flex, Image, Input, Menu, MenuButton, MenuItem, MenuList, Spacer, useDisclosure,Text, ListItem, UnorderedList, background} from "@chakra-ui/react"
-import {Link, NavLink} from "react-router-dom"
-import { PhoneIcon, AddIcon, WarningIcon,HamburgerIcon,ChevronDownIcon} from '@chakra-ui/icons'
+import { HamburgerIcon,ChevronDownIcon} from '@chakra-ui/icons'
 import log from "../logo/logo.png"
 import ModalLogin from "../Login/Modal"
 import loc from "../logo/location.png"
 import {useNavigate} from "react-router-dom"
-import styles from "../Homepage/css/Nav.css"
-import { useDispatch } from 'react-redux';
 import axios from 'axios';
+import st from './st.png'
 
 const links=[
   {path:"/restaurant",title:`Restaurants`,logo:"https://img4.nbstatic.in/tr:w-/60af2a061e2731000ba1096a.png"},{path:"/buffet",title:"Buffet",logo:"https://img4.nbstatic.in/tr:w-/639acd9b8db992000bac8a46.png"},{path:"/saloon",title:"Saloon",logo:"https://img4.nbstatic.in/tr:w-/60ac96c840e9df000b6cbf94.png"},{path:"/spa",title:"Spa",logo:"https://img4.nbstatic.in/tr:w-/60ac96e240e9df000b6cbf95.png"},{path:"/activities",title:"Activities",logo:"https://img4.nbstatic.in/tr:w-/6201ec623b031b000b53e5b6.png"},{path:"/gift",title:"Gift",logo:"https://img4.nbstatic.in/tr:w-/62d67522edffcc000b060b5c.png"}
@@ -114,7 +112,7 @@ const Navbar = () => {
   <div className='rightsidebox' >
   <Box className={"flex"} >
     < >
-    <Image src="https://cdn.icon-icons.com/icons2/2406/PNG/512/user_account_icon_145918.png" alt="acntlogo" 
+    <Image src={st} alt="acntlogo" 
      style={{height:"25px"}}
     />
     <Spacer />

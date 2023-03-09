@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import "./css/homepage.css"
-import {Box,Grid,Heading,Image,Text} from "@chakra-ui/react"
+import {Box,Flex,Grid,Heading,Image,Text} from "@chakra-ui/react"
 import {useNavigate} from "react-router-dom"
 import "react-responsive-carousel/lib/styles/carousel.min.css"
  import {Carousel} from "react-responsive-carousel"
@@ -166,14 +166,14 @@ const Homepage = () => {
   
   return (
    <>
-     <div className='navbardiv'>
+     <Flex className='navbardiv' wrap={'wrap'}>
      {navbararray.map((el,ind)=>{
         return <Box className='navbarbox' onClick={()=>navigate(`/${el.go}`)} key={ind}>
             <Image src={el.src} alt={el.alt} />
             <Text>{el.text}</Text>
         </Box>
      })}
-   </div>
+   </Flex>
 
    <div className='firstcrauser'>
    <Carousel infiniteLoop autoPlay showThumbs={false}>
