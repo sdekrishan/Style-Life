@@ -59,10 +59,7 @@ export const filterdata = (val, page, sort, order, cat) => async (dispatch) => {
       console.log(err);
     }
   }
-  // let res = await axios.get(
-  //   `https://busy-cyan-betta-garb.cyclic.app/${cat}?_page=${page}&_limit=30&_sort=${sort}&_order=${order}`
-  // );
-  // console.log(val);
+
   let filtered = res.data.filter((el) => {
     if (el.address !== null && el.address.includes(val)) {
       return el;
