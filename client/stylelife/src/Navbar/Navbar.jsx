@@ -183,7 +183,7 @@ const Navbar = () => {
         <Spacer />
 
         <div className="rightsidebox">
-          <Box className={"flex"}>
+          <Box className={"flex"} >
             <>
               <Image src={st} alt="acntlogo" style={{ height: "25px" }} />
               <Spacer />
@@ -202,7 +202,7 @@ const Navbar = () => {
           </Button>
         </Box>
 
-        <Box className="drawer-logo">
+        <Box className="drawer-logo" >
           <Image src={log} alt="logo" onClick={() => navigate("/")} />
         </Box>
 
@@ -244,8 +244,12 @@ const Navbar = () => {
                       justifyContent={"space-evenly"}
                       alignItems="center"
                       className="drawernavbar"
-                      w="80%"
+                      w="90%"
                       key={ind}
+                      border='1px solid gray'
+                      borderRadius={'10px'}
+                      mb='5px'
+                      p='1rem'
                     >
                       <Text
                         key={el.title}
