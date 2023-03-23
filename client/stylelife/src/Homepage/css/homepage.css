@@ -1,58 +1,54 @@
-
-.body{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+.body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-.navbardiv{
-    
-   display: flex;
-   justify-content: space-around;
+.navbardiv {
+  display: flex;
+  justify-content: space-around;
 }
-.navbarbox{
-   padding: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.navbarbox {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.navbarbox:hover{
-    cursor: pointer;
+.navbarbox:hover {
+  cursor: pointer;
 }
-.navbarbox>img{
-    height: 30px;
+.navbarbox > img {
+  height: 30px;
 }
-.navbarbox:hover{
- background-color: lightgray;
-}
-
-.carousel .slide{
-    height: auto;
-   
-}
-.firstcrauser{
-    margin-top: 15px;
-    padding: 15px 15px 0px 15px;
-    background-color: lightgrey;
+.navbarbox:hover {
+  background-color: lightgray;
 }
 
+.carousel .slide {
+  height: auto;
+}
+.firstcrauser {
+  margin-top: 15px;
+  padding: 15px 15px 0px 15px;
+  background-color: lightgrey;
+}
 
-.brands{
-    width: 95%;
-    padding: 20px;
-   text-align: left;
-   margin-left: 10px;
+.brands {
+  width: 95%;
+  padding: 20px;
+  text-align: left;
+  margin-left: 10px;
 }
-.brands h1{
-     font-size: 25px;
-    font-weight: bolder;
-    font-family: sans-serif;
+.brands h1 {
+  font-size: 25px;
+  font-weight: bolder;
+  font-family: sans-serif;
 }
-.brandlogo{
-    margin-top: 10px;
+.brandlogo {
+  margin-top: 10px;
 }
-.brandlogo img{
-    height: 90px;
+.brandlogo img {
+  height: 90px;
 }
 .slick-slide > div {
   margin: 0 10px;
@@ -65,149 +61,140 @@
   color: yellow;
 }
 
-.dealbox{
-   
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-   gap: 20px;
-    margin-top: 10px;
-    cursor: pointer;
-   
-    padding: 10px;
+.dealbox {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+  margin-top: 10px;
+  cursor: pointer;
+
+  padding: 10px;
 }
 
-.insidenearby:hover{
-   
-    width: 105%;
-    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+.insidenearby:hover {
+  width: 105%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 }
 
-.insidenearby p{
-    color: #35a854;
-    font-weight: bolder;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    text-align: left;
+.insidenearby p {
+  color: #35a854;
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  text-align: left;
 }
-.insidenearby p:first-child{
-    color: #35a854;
-    font-weight: bolder;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    text-align: left;
+.insidenearby p:first-child {
+  color: #35a854;
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  text-align: left;
 }
-.insidenearby p:last-child{
-    color:red;
-    font-weight: bolder;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-    text-align: left;
+.insidenearby p:last-child {
+  color: red;
+  font-weight: bolder;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-align: left;
 }
-.nearbypricebox{
-    display: flex;
-    justify-content: space-between;
+.nearbypricebox {
+  display: flex;
+  justify-content: space-between;
 }
-.nearbyheading{
-    font-size: 25px;
-    font-weight: bolder;
-    text-align: left;
-    margin-top: 15px;
-    margin-left: 15px;
-}
-
-.quickstartbox{
-    width: 95%;
-    margin-left: 10px;
-    padding: 20px;
-    text-align: left;
+.nearbyheading {
+  font-size: 25px;
+  font-weight: bolder;
+  text-align: left;
+  margin-top: 15px;
+  margin-left: 15px;
 }
 
-.quickstartbox h1{
-    font-size: 25px;
-    font-weight: bolder;
-    font-family: sans-serif;
+.quickstartbox {
+  width: 95%;
+  margin-left: 10px;
+  padding: 20px;
+  text-align: left;
 }
 
-.nextthingbox{
-    padding: 15px;
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: auto;
-   gap: 20px;
-    
-}
-.nextthingbox:hover{
-    cursor: pointer;
+.quickstartbox h1 {
+  font-size: 25px;
+  font-weight: bolder;
+  font-family: sans-serif;
 }
 
-
-.promobox{
-    width: 95%;
-    margin-left: 10px;
-    padding: 20px;
-    text-align: left;
+.nextthingbox {
+  padding: 15px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: auto;
+  gap: 20px;
+}
+.nextthingbox:hover {
+  cursor: pointer;
 }
 
-.promobox h1{
-    font-size: 25px;
-    font-weight: bolder;
-    font-family: sans-serif;
+.promobox {
+  width: 95%;
+  margin-left: 10px;
+  padding: 20px;
+  text-align: left;
 }
 
-@media all and (min-width:700px) and (max-width: 1000px){
-.navbardiv{
-   
+.promobox h1 {
+  font-size: 25px;
+  font-weight: bolder;
+  font-family: sans-serif;
+}
+
+@media all and (min-width: 700px) and (max-width: 1000px) {
+  .navbardiv {
     margin-top: 60px;
-}
-#sliderimages img{
- height: 200px;
- 
-}
-.dealbox{
-   grid-template-columns: repeat(3, 1fr);
-   }
-   .nextthingbox{
+  }
+  #sliderimages img {
+    height: 200px;
+  }
+  .dealbox {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .nextthingbox {
     padding: 15px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
-   gap: 20px;
-    
+    gap: 20px;
+  }
 }
 
-}
+@media all and (min-width: 300px) and (max-width: 699px) {
+  .navbardiv {
+    margin-top: 60px;
+  }
+  .navbarbox {
+    text-align: center;
+    overflow: hidden;
+  }
 
-@media all and (min-width:300px) and (max-width: 699px){
-    .navbardiv{
-      
-        margin-top: 60px;
-    }
-    .navbarbox{
-        text-align: center;
-        overflow: hidden;
-    }
-    
-    #sliderimages img{
-        height: 170px;
-       
-    }
-    .dealbox{
-       grid-template-columns: repeat(2, 1fr);
-       }
-       .nextthingbox{
-        padding: 15px;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto;
-       gap: 20px;
-        
-    }
-    .saloonfacialbox img{
-        height: 100px;
-    }
-    }
+  #sliderimages img {
+    height: 170px;
+  }
+  .dealbox {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nextthingbox {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    gap: 20px;
+  }
+  .saloonfacialbox img {
+    height: 100px;
+  }
+}

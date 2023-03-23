@@ -17,85 +17,89 @@ import Login from "./Login";
 const ModalLogin = ({ title }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [UserLogin, setUserLogin] = useState(false);
-  const [AdminLogin, setAdminLogin ] = useState(false);
-  const [Admin, setAdmin] = useState("")
-  const navigate = useNavigate()
+  const [AdminLogin, setAdminLogin] = useState(false);
+  const [Admin, setAdmin] = useState("");
+  const navigate = useNavigate();
   let token = JSON.parse(localStorage.getItem("StyleLifeUserData")) || "";
   let admintoken = JSON.parse(localStorage.getItem("StyleLifeAdminData")) || "";
   token = token.token;
-  admintoken = admintoken.token
+  admintoken = admintoken.token;
   useEffect(() => {
     if (token === undefined) {
       setUserLogin(true);
-    }
-     else {
+    } else {
       setUserLogin(false);
     }
   });
-  useEffect(()=>{
-    if(admintoken===undefined){
-      setAdminLogin(true)
+  useEffect(() => {
+    if (admintoken === undefined) {
+      setAdminLogin(true);
+    } else {
+      setAdminLogin(false);
     }
-    else {
-      setAdminLogin(false)
-    }
-  })
+  });
 
   const HandelLogOut = () => {
     setUserLogin(true);
-    setAdmin("")
+    setAdmin("");
     localStorage.removeItem("StyleLifeUserData");
     localStorage.removeItem("StyleLifeAdminData");
 
-    navigate("/")
+    navigate("/");
   };
 
   return (
-   <>
-    <Box >
-      {UserLogin && Admin !== "Admin" ?  (
-        <>
-          <Button bg="none" w="auto" onClick={()=>{
-            onOpen();
-           
-          }}>
-            {title === "yes" ? (
-              <Image
-                src="https://cdn.icon-icons.com/icons2/2406/PNG/512/user_account_icon_145918.png"
-                alt="acntlogo"
-                style={{ height: "25px" }}
-              />
-            ) : (
-            title
-            )}
-          </Button>
-       
-          <Modal isOpen={isOpen} onClose={onClose} >
-            <ModalOverlay />
-            <ModalContent
-              p='1rem'
-              maxW={{base:'100vw',sm:"100vw",md:"70vw",lg:"55vw"}}
+    <>
+      <Box>
+        {UserLogin && Admin !== "Admin" ? (
+          <>
+            <Button
+              bg="none"
+              w="auto"
+              onClick={() => {
+                onOpen();
+              }}
             >
-              <ModalCloseButton />
-              <ModalBody>
-               
-                <Login setAdmin={setAdmin} onClose={onClose} />
-              </ModalBody>
-            </ModalContent>
-          </Modal>
-        </>
-      ) : (
-    
-        <Button onClick={HandelLogOut} display={{base:"none",md:"block"}}>Logout</Button>
-       
-       
-      )}
-    </Box>
-   <Button
-   display={Admin ===""  ? 'none' : 'block'}
-  
-   onClick={()=>navigate("/admin")}>{Admin === "" ? "" :  Admin}</Button>
-   </>
+              {title === "yes" ? (
+                <Image
+                  src="https://cdn.icon-icons.com/icons2/2406/PNG/512/user_account_icon_145918.png"
+                  alt="acntlogo"
+                  style={{ height: "25px" }}
+                />
+              ) : (
+                title
+              )}
+            </Button>
+
+            <Modal isOpen={isOpen} onClose={onClose}>
+              <ModalOverlay />
+              <ModalContent
+                p="1rem"
+                maxW={{ base: "100vw", sm: "100vw", md: "70vw", lg: "55vw" }}
+              >
+                <ModalCloseButton />
+                <ModalBody>
+                  <Login setAdmin={setAdmin} onClose={onClose} />
+                </ModalBody>
+              </ModalContent>
+            </Modal>
+          </>
+        ) : (
+          <Button
+            onClick={HandelLogOut}
+            display={{ base: "none", md: "block" }}
+          >
+            Logout
+          </Button>
+        )}
+      </Box>
+      <Button
+        display={Admin === "" ? "none" : "block"}
+        onClick={() => navigate("/admin")}
+      >
+        {Admin === "" ? "" : Admin}
+      </Button>
+    </>
   );
 };
 

@@ -11,11 +11,7 @@ import React, { useEffect, useState } from "react";
 import { useToast } from "@chakra-ui/react";
 import "./SingleProduct.css";
 import axios from "axios";
-import {
-  useLocation,
-  useNavigate,
-  useParams,
-} from "react-router-dom";
+import { useLocation, useNavigate, useParams } from "react-router-dom";
 import Footer from "../Footer/Footer";
 import { useDispatch, useSelector } from "react-redux";
 import { getCart } from "../Redux/Cart/Cart.types";
@@ -31,7 +27,7 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
   const [cart, setCart] = useState([]);
   const { isOpen, onOpen, onClose } = useDisclosure({ defaultIsOpen: true });
-  const{token } = useSelector(store=>store.auth)
+  const { token } = useSelector((store) => store.auth);
   let loca = location.search.split("?").join("");
   const deleteCart = async () => {
     try {
@@ -73,9 +69,7 @@ const SingleProduct = () => {
     getCategoryData();
   }, []);
 
-
   console.log(totalCart);
-
 
   const handleCheck = () => {
     console.log("Checked out", user);

@@ -25,11 +25,12 @@ const Login = ({ onClose, setAdmin }) => {
   };
 
   return (
-    <Box
-      display={["grid", "flex", "flex"]}
-      justifyContent='space-between'
-    >
-      <Box className={style.first_box_login} marginInline={'auto'} w={{base:'90%',sm:'90%',md:"60%",lg:'40%'}}>
+    <Box display={["grid", "flex", "flex"]} justifyContent="space-between">
+      <Box
+        className={style.first_box_login}
+        marginInline={"auto"}
+        w={{ base: "90%", sm: "90%", md: "60%", lg: "40%" }}
+      >
         <Box>
           <Box>
             <Image src="http://www.nearbuy.com/static/images/nb-logo.png" />
@@ -41,7 +42,10 @@ const Login = ({ onClose, setAdmin }) => {
         </Box>
       </Box>
 
-      <Box className={style.second_Box_login} w={{base:'100%',sm:'100%',md:"60%",lg:'60%'}}  >
+      <Box
+        className={style.second_Box_login}
+        w={{ base: "100%", sm: "100%", md: "60%", lg: "60%" }}
+      >
         {ButtonTomove ? (
           <SignUp
             HandelChange={HandelChange}
@@ -67,7 +71,12 @@ const Login = ({ onClose, setAdmin }) => {
             setPasswordForgate={setPasswordForgate}
           />
         ) : (
-          <ChangePassword email={email} name={name}  onClose={onClose} setRoute_forgate_Chgange={setRoute_forgate_Chgange} />
+          <ChangePassword
+            email={email}
+            name={name}
+            onClose={onClose}
+            setRoute_forgate_Chgange={setRoute_forgate_Chgange}
+          />
         )}
       </Box>
     </Box>

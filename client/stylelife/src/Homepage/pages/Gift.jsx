@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 const Gift = () => {
-  return (
-    <div>Gift</div>
-  )
-}
+  return <div>Gift</div>;
+};
 
-export default Gift
+export default Gift;

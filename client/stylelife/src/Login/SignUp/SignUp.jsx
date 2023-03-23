@@ -1,4 +1,11 @@
-import { background, Box, Button, Heading, Input, Slide } from "@chakra-ui/react";
+import {
+  background,
+  Box,
+  Button,
+  Heading,
+  Input,
+  Slide,
+} from "@chakra-ui/react";
 import React, { useState } from "react";
 import ReCapture from "../pages/reCapture/reCapture";
 import style from "./style/SignUp.module.css";
@@ -75,8 +82,8 @@ const SignUp = ({
   };
 
   return (
-    <Box className={style.mainBoxTop} w='100%' p='1rem' >
-      <Heading color={"#666"} as="h4" size="xl" mb='3rem'>
+    <Box className={style.mainBoxTop} w="100%" p="1rem">
+      <Heading color={"#666"} as="h4" size="xl" mb="3rem">
         Sign up{" "}
       </Heading>
       {/* <Box className={style.MainBox}></Box> */}

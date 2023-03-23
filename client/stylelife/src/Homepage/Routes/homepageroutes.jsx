@@ -8,7 +8,7 @@ import AdminHome from "../../pages/Admin/AdminHome";
 import ErrorPage from "../../components/ErrorPage";
 import PrivateRoute from "../../components/PrivateRoute";
 import Saloon from "../pages/Saloon";
-import Buffetpage from '../../Homepage/pages/Buffetpage'
+import Buffetpage from "../../Homepage/pages/Buffetpage";
 import UserPrivateRoute from "../../components/UserPrivateRoute";
 const Homepageroutes = () => {
   return (
@@ -23,11 +23,24 @@ const Homepageroutes = () => {
         <Route path="/health" element={<Products category="health" />}></Route>
         <Route path="/saloon" element={<Saloon />}></Route>
         <Route path="/buffet" element={<Buffetpage />}></Route>
-        <Route path="/ProductDetails/:id" element={<UserPrivateRoute><SingleProduct /></UserPrivateRoute>} />
+        <Route
+          path="/ProductDetails/:id"
+          element={
+            <UserPrivateRoute>
+              <SingleProduct />
+            </UserPrivateRoute>
+          }
+        />
         <Route path="/payment" element={<PaymentPage />} />
-        <Route path="/admin" element={<PrivateRoute><AdminHome /></PrivateRoute>} />
+        <Route
+          path="/admin"
+          element={
+            <PrivateRoute>
+              <AdminHome />
+            </PrivateRoute>
+          }
+        />
         <Route path="*" element={<ErrorPage />} />
-        
       </Routes>
     </>
   );

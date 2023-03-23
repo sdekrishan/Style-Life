@@ -25,10 +25,10 @@ const SignIn = ({
   const [password, setPassword] = useState("");
 
   const navigation = useNavigate();
-const dispatch = useDispatch()
+  const dispatch = useDispatch();
   const PostForSignUp = async (data1) => {
     try {
-      let res =await dispatch(loginAction(data1))
+      let res = await dispatch(loginAction(data1));
       console.log(res);
       if (res.data.msg === "login successful") {
         toast({
@@ -127,7 +127,7 @@ const dispatch = useDispatch()
   };
 
   return (
-    <Box className={style.mainBox} >
+    <Box className={style.mainBox}>
       <Box>
         <Heading color={"#666"} as="h4" size="xl">
           Login

@@ -1,91 +1,86 @@
-html,body{
+html,
+body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
- .logobox:hover{
+.logobox:hover {
   cursor: pointer;
- }
+}
 
- input:focus .searchbox{
+input:focus .searchbox {
   display: block;
- }
+}
 
-.mobilenav{
-    width: 100vw;
-    position: fixed;
-    z-index: 1000;
-    padding-left: 15px;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    padding: 1%;
+.mobilenav {
+  width: 100vw;
+  position: fixed;
+  z-index: 1000;
+  padding-left: 15px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 1%;
   position: fixed;
   top: 0;
-   margin-bottom: 20px;
-   background-color: white;
+  margin-bottom: 20px;
+  background-color: white;
 }
- .flex{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   padding: 5px;
-   
- }
- .rightsidebox{
-   
-    display: flex;
-    justify-content: center;
-    align-items: center;
- }
+.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+}
+.rightsidebox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
- .searchbtn{
-    margin-left: 5px;
-    background-color: #ef534e;
-    color: white;
-    padding: 6px 18px;
- }
+.searchbtn {
+  margin-left: 5px;
+  background-color: #ef534e;
+  color: white;
+  padding: 6px 18px;
+}
 
- .checkbox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-   
- }
-  .locationbox{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 5px;
-  }
-   .checkbox>.locationbox p{
-   font-size: 10px;
- }
+.checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.locationbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 5px;
+}
+.checkbox > .locationbox p {
+  font-size: 10px;
+}
 
-
- .drawer{
+.drawer {
   visibility: hidden;
   opacity: 0;
   display: flex;
- justify-content: space-between;
- align-items: center;
- margin-bottom: 10px;
- padding: 10px 10px;
- width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px 10px;
+  width: 100%;
 }
-.drawer-logo img{
- height: 50px;
+.drawer-logo img {
+  height: 50px;
   width: auto;
 }
- #drawer-flex{
+#drawer-flex {
   display: flex;
- margin-right: 0;
-  
- 
- }
+  margin-right: 0;
+}
 
- @media only screen and (max-width:1200px){
-  .drawer{
+@media only screen and (max-width: 1200px) {
+  .drawer {
     visibility: visible;
     z-index: 100;
     opacity: 1;
@@ -95,37 +90,31 @@ html,body{
     top: 0;
     background-color: white;
   }
-  .mobilenav{
-  visibility: hidden;
-  opacity: 0;
-  z-index: 1000;
-  
-}
- 
- }
-
- @media screen and (min-width:499px) and (max-width: 500px){
- 
-  .drawer-logo img{
-      height: 50px;
-       width: auto;
-     }
-     .drawer{
-      visibility: visible;
-      z-index: 100;
-      opacity: 1;
-      margin-bottom: 5px;
-      padding: 2px 5px 2px 3px;
-      position: fixed;
-      top: 0;
-      background-color: white;
-    }
-    .mobilenav{
-    visibility: hidden;  
+  .mobilenav {
+    visibility: hidden;
     opacity: 0;
     z-index: 1000;
   }
- 
-
 }
 
+@media screen and (min-width: 499px) and (max-width: 500px) {
+  .drawer-logo img {
+    height: 50px;
+    width: auto;
+  }
+  .drawer {
+    visibility: visible;
+    z-index: 100;
+    opacity: 1;
+    margin-bottom: 5px;
+    padding: 2px 5px 2px 3px;
+    position: fixed;
+    top: 0;
+    background-color: white;
+  }
+  .mobilenav {
+    visibility: hidden;
+    opacity: 0;
+    z-index: 1000;
+  }
+}

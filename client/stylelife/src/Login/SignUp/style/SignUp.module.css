@@ -1,23 +1,21 @@
-
-.mainBoxTop > div{
-   margin-bottom: 30px;
+.mainBoxTop > div {
+  margin-bottom: 30px;
 }
 
-.MainBox > div > input{
-    margin-bottom: 1rem;
-    border: 0px;
-    border-bottom: 1px solid;
-    border-radius: 0px;
-    padding-bottom: 8px;
+.MainBox > div > input {
+  margin-bottom: 1rem;
+  border: 0px;
+  border-bottom: 1px solid;
+  border-radius: 0px;
+  padding-bottom: 8px;
 }
 
-.MainBox > div > input::placeholder{
-   border: none;
+.MainBox > div > input::placeholder {
+  border: none;
 }
 
-.btnNextcolor{
-   padding:5px 15px;
-   border-radius: 0px;
-   background-color:#ef534e;
-
+.btnNextcolor {
+  padding: 5px 15px;
+  border-radius: 0px;
+  background-color: #ef534e;
 }

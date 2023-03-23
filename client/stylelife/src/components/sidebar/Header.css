@@ -1,6 +1,5 @@
-
-.buttons:hover{
-    background-color: rgb(1, 46, 14);
-    cursor: pointer;
-    color: white;
+.buttons:hover {
+  background-color: rgb(1, 46, 14);
+  cursor: pointer;
+  color: white;
 }

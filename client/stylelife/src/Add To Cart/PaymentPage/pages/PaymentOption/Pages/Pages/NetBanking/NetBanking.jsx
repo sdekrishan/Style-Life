@@ -11,7 +11,7 @@ import {
 import React from "react";
 import style from "./style/NetBanking.module.css";
 
-export const NetBanking = ({setOrderPlace}) => {
+export const NetBanking = ({ setOrderPlace }) => {
   let imagesBank1 = [
     "https://1.bp.blogspot.com/-WNdzxIDrBVM/XtX6Jpc6OkI/AAAAAAAABjg/-xNlUdkYlvUqS78GV97b-A_ZcNjvjfe0ACEwYBhgLKtQDAL1Ocqz_9xt-xc1J-AoZE8ZgyQ0QSg8Nuil8zv4nezVzFlrfhQdDO6d58YstTKDVlD3JV4Cwb8ksJ0vHKrgZVItm16PCM190tL4mFbg3qWDjqm-XCmyKEUjeLtMGXBKdS-V_HkKPlpVeVT8etjF1ZymOSKx-cpjXgzlHNubhaAOxDjY9clQLjOg7Cgpl5in4LhXQh23xAiiD8B8KdpQEQ4S1nnxVMOvXRo7IrUSsjyPhZfTPEW2TeZhw2CVDPDTDiqe8LLvw-EiOmOw_I6HAlEIEsXNB-xJGowUf22HAcQZ0ot_2DTs-q7mVy9m8xgTrSlYQR0krNPa4DLevEZDdm97YZKDvnuqckM150BPMOM9ofAtExIYqPBhahQSR7B8a1sGxmqZDarikWzKGjQmnL5PZ7Ss_ny9jXYCi9taAVVJKB_-YUJZPK4ddxHdDcDYiG_jH5kiCoj_zvMQ7s26kkr-C3GcAw1HEUxngczqW445xfWp6tzguL4pycr6UfNLZtT-vXP9mU1i4qpYXubkr8JQKwADxGgfNbmCYst8Sm8Cc4a0VJ7EG3gFPfnLSUIMqzDYN7WoVuUPFU1KH6GxhWnYT_DHq7TdDiL8IFvXc_aJDGvfIMNj51_YF/s1600/kioab1.jpeg",
     "https://th.bing.com/th/id/OIP.0ZVH74eMZj6jjjsLep3iNwHaEK?pid=ImgDet&rs=1",
@@ -48,7 +48,7 @@ export const NetBanking = ({setOrderPlace}) => {
       <Flex>
         {imagesBank1.map((ele) => {
           return (
-            <Box mr='1' w="15rem">
+            <Box mr="1" w="15rem">
               <Flex border={"1px solid"}>
                 <Box pl="2" pr="2" justifyContent={"center"} display="grid">
                   {" "}
@@ -67,7 +67,7 @@ export const NetBanking = ({setOrderPlace}) => {
       <Flex>
         {imagesBank2.map((ele) => {
           return (
-            <Box mr="1"  w="15rem">
+            <Box mr="1" w="15rem">
               <Flex border={"1px solid"}>
                 <Box pl="2" pr="2" justifyContent={"center"} display="grid">
                   {" "}
@@ -110,7 +110,12 @@ export const NetBanking = ({setOrderPlace}) => {
       </Box>
 
       <Box justifyContent={"flex-start"} display="grid">
-        <Button  onClick={()=>setOrderPlace(true)} _hover={"none"} borderRadius={"0px"} bg="#ef534e">
+        <Button
+          onClick={() => setOrderPlace(true)}
+          _hover={"none"}
+          borderRadius={"0px"}
+          bg="#ef534e"
+        >
           Pay Now
         </Button>
       </Box>

@@ -25,8 +25,13 @@ export const DeditCards = ({ setOrderPlace }) => {
               "https://th.bing.com/th/id/R.9e95d35f72b8dc8042b2a2dd61dce2ed?rik=RoQLZ3TAbJmDmw&riu=http%3a%2f%2fwww.enterhindi.com%2fwp-content%2fuploads%2f2017%2f02%2frupay-logo.png&ehk=bWtEwsZPRsJXVWC3ZdnDKUj5gUqKqWYC%2fvus3qkQQsk%3d&risl=&pid=ImgRaw&r=0"
             }
             size="sm"
-                        id="ccn" type="number" inputmode="numeric" pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx"
-
+            id="ccn"
+            type="number"
+            inputmode="numeric"
+            pattern="[0-9\s]{13,19}"
+            autocomplete="cc-number"
+            maxlength="19"
+            placeholder="xxxx xxxx xxxx xxxx"
           />
         </Box>
       </Box>

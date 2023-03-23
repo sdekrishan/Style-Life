@@ -19,7 +19,12 @@ import { useEffect } from "react";
 import { filterdata, getdata } from "../Redux/products/Prodaction";
 import { StarIcon } from "@chakra-ui/icons";
 import Pagination from "./Pagination";
-import { Navigate, useLocation, useNavigate, useSearchParams } from "react-router-dom";
+import {
+  Navigate,
+  useLocation,
+  useNavigate,
+  useSearchParams,
+} from "react-router-dom";
 import Footer from "../Footer/Footer";
 
 const smVariant = { navigation: "drawer", navigationButton: true };
@@ -70,7 +75,6 @@ const Products = ({ category }) => {
       setpage(1);
     }
   };
-
 
   const tolocal = (el) => {
     navigate(`/ProductDetails/${el._id}?${el.type}`);
@@ -266,7 +270,7 @@ const Products = ({ category }) => {
           </Box>
         </Box>
       </Box>
-      <Footer/> 
+      <Footer />
     </>
   );
 };

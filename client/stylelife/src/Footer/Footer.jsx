@@ -24,8 +24,8 @@ export default function Footer() {
   return (
     <Box
       bg="black"
-      color='white'
-    mt='1rem'
+      color="white"
+      mt="1rem"
       width={"full"}
       paddingLeft={"3rem"}
       paddingRight={"3rem"}
@@ -48,7 +48,12 @@ export default function Footer() {
           </Stack>
 
           {/* quickLinks */}
-          <Stack align={"flex-start"} fontSize={".85rem"} fontWeight={"500"} ml={{base: 0, sm: '0', md: '0',lg:'-4rem'}}>
+          <Stack
+            align={"flex-start"}
+            fontSize={".85rem"}
+            fontWeight={"500"}
+            ml={{ base: 0, sm: "0", md: "0", lg: "-4rem" }}
+          >
             <Text fontWeight={"600"} fontSize={"1rem"}>
               Quick Links
             </Text>
@@ -61,9 +66,14 @@ export default function Footer() {
           </Stack>
           {/* About JCrew */}
 
-          <Stack align={"flex-start"} fontSize={".85rem"} fontWeight={"500"} ml={{base: 0, sm: '0', md: '0',lg:'-8rem'}}>
+          <Stack
+            align={"flex-start"}
+            fontSize={".85rem"}
+            fontWeight={"500"}
+            ml={{ base: 0, sm: "0", md: "0", lg: "-8rem" }}
+          >
             <Text fontWeight={"600"} fontSize={"1rem"}>
-            About Style Life
+              About Style Life
             </Text>
 
             <Link href={"#"}>Our Story</Link>
@@ -76,12 +86,15 @@ export default function Footer() {
             <Link>Terms of Use</Link>
             <Link>Privacy Policy</Link>
             <Link>California Do Not Sell My Personal Information</Link>
-            <Link>Diversity, Equity and Inclusion at Style life  Group</Link>
+            <Link>Diversity, Equity and Inclusion at Style life Group</Link>
           </Stack>
           {/* like being first  */}
-          <Stack align={"flex-start"} ml={{base: 0, sm: '0', md: '0',lg:'-4rem'}}>
+          <Stack
+            align={"flex-start"}
+            ml={{ base: 0, sm: "0", md: "0", lg: "-4rem" }}
+          >
             <Text fontWeight={"600"} fontSize={"1rem"}>
-            Like Being First?
+              Like Being First?
             </Text>
 
             <Text fontSize={".85rem"} color="grey">
@@ -101,7 +114,12 @@ export default function Footer() {
                 w="5rem"
                 fontWeight={"500"}
                 padding=".8rem"
-                fontSize={{base: '.7rem', sm: '.7rem', md: '0.7rem',lg:'.8rem'}}
+                fontSize={{
+                  base: ".7rem",
+                  sm: ".7rem",
+                  md: "0.7rem",
+                  lg: ".8rem",
+                }}
                 border="none"
                 color="black"
                 borderRadius={"none"}
@@ -113,7 +131,11 @@ export default function Footer() {
         </SimpleGrid>
       </Container>
       <Box py={10}>
-        <Flex alignItems={"center"} justifyContent={"space-between"} w={{base: '50vw', sm: '40vw', md: '30vw',lg:'20vw'}}>
+        <Flex
+          alignItems={"center"}
+          justifyContent={"space-between"}
+          w={{ base: "50vw", sm: "40vw", md: "30vw", lg: "20vw" }}
+        >
           <BsInstagram size={"1.5rem"} />
           <GrFacebookOption size={"1.5rem"} />
           <BsTwitter size={"1.5rem"} />
@@ -129,8 +151,6 @@ export default function Footer() {
           cursor="pointer"
         >
           <Text _hover={{ borderBottom: "1px solid black" }}>India </Text>
-
-         
         </Flex>
         <Text pt={6} fontSize={"sm"} textAlign={"left"}>
           © 2023 Style Life
